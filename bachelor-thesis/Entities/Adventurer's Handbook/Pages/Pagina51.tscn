@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://clm6pray2u05k"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_rt2ue"]
+
+[node name="Lorum5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_rt2ue")
+bbcode_enabled = true
+text = "[center][font_size=64]Slotwoord[/font_size][/center]
+
+Beste avonturier,
+
+Hopelijk heeft dit handboek je goed op weg geholpen. Het lijkt een grote willekeurige hoop aan informatie, maar geloof mij: Het zal op een dag je zeker nuttig bijstaan!
+
+Vergeet niet, de belangrijkste les is dat je als avonturier altijd nieuwsgierig blijft om de wereld te verkennen. Achter elke hoek zit weer een nieuw raadsel verstopt. Zo ook in de échte wereld.
+
+Nog een advies: Kom je er niet zelf uit, vertrouw dan op je mede-avonturiers. Ze helpen je graag.
+
+[right] - De Gilde"

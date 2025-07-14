@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://clci8neuqkyqj"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_67tyg"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_67tyg")
+bbcode_enabled = true
+text = "
+12. Het langst levende gewerveld dier is echter de Groenlandse Haai, want die kunnen tot 400 jaar oud worden.
+
+13. Er zit minder tijd tussen het bestaan van de Tyrannosaurus Rex en het bestaan van de mens dan dat er tussen de T-Rex en de Stegosaurus zit.
+
+14. De ogen van rendieren lichten in de zomer groengeel op als het donker is, maar in de winter verandert dit naar diepblauw. Hierdoor kunnen ze bij lagere lichtniveaus ook nog goed zien.
+
+Deze feitjes komen uit: https://www.animalstoday.nl/34-verrassende-dierenfeiten/"

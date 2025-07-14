@@ -1,0 +1,6 @@
+[signal arg="disable_RC"]
+"Main Character": "Er staan twee tonnen tegen de muur..."
+"Robot Companion" (Active): "Twee tonnen? Dus 2000 kg aan gewicht?"
+"Main Character": "..."
+"Main Character": "...Ik geef het op."
+[signal arg="enable_RC"]

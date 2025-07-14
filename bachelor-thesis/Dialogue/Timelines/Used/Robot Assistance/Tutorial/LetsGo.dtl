@@ -1,0 +1,3 @@
+[signal arg="disable_RC"]
+"Robot Companion": "Laten we gaan! Klik op de [b]rode pijl[/b] om naar het volgende gebied te lopen."
+[signal arg="enable_RC"]

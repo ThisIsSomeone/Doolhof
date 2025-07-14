@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr25molhw6fid"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_jm66q"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_jm66q")
+bbcode_enabled = true
+text = "[center][font_size=64]Dierennaamgeving[/font_size][/center]
+
+Elk dier krijgt een formele naam toegewezen door de \"Zoölogische Nomenclatuur\". Zo is het dat de kokmeeuw en de kapmeeuw beiden namen zijn voor dezelfde vogel, namelijk de Chroicocephalus ridibundus.
+
+Een dier heeft maar één correcte wetenschappelijke naam, ofschoon welke naam correct is verschillen kan met de taxonomische opvatting van de schrijver.
+
+Meestal zijn de namen van soorten Latijn of Grieks, en vaak geven de namen een interresant kenmerk van de soort aan."

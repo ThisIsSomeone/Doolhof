@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://lpae0syjc7xk"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_ivgme"]
+[ext_resource type="Texture2D" uid="uid://bt0k53bthd76w" path="res://Entities/Adventurer's Handbook/Pages/altocumulus.jpg" id="2_0s3nf"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_ivgme")
+bbcode_enabled = true
+text = "
+Middelhoge bewolking:
+
+Tot de middelhoge bewolking behoren altocumulus, altostratus en nimbostratus. Dit zijn wolken die voorkomen tussen de 2 tot 6 kilometer in de onderste tien kilometer van de atmosfeer (de troposfeer). Ze bestaan voornamelijk uit onderkoelde waterdruppels.
+
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 1216.0
+offset_bottom = 887.0
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_0s3nf")
+stretch_mode = 2

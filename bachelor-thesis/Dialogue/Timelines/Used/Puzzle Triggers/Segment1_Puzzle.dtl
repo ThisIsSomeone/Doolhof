@@ -1,0 +1,94 @@
+[signal arg="disable_RC"]
+# Skip to the right part
+if {Actual.Segment 1.timeline_progress} == "puzzle_shown":
+	jump puzzle_shown
+elif {Actual.Segment 1.timeline_progress} == "puzzle1_completed":
+	jump puzzle1_completed
+elif {Actual.Segment 1.timeline_progress} == "help_1":
+	jump help_1
+elif {Actual.Segment 1.timeline_progress} == "puzzle2_shown":
+	jump puzzle2_shown
+elif {Actual.Segment 1.timeline_progress} == "help_2":
+	jump help_2
+elif {Actual.Segment 1.timeline_progress} == "puzzle2_completed":
+	jump puzzle2_completed
+"Main Character": Er zit een paneel met vier knoppen aan de bovenkant van deze dobbelsteen
+"Main Character": Dit is vast de puzzel. Maar wat is de vraag, en wat is het antwoord?
+[signal arg="start"]
+set {Actual.Segment 1.timeline_progress} = "puzzle_shown"
+label puzzle_shown
+label help_1
+[signal arg="enable_RC"]
+- Klik: "2"
+	set {Actual.Segment 1.did_not} = true
+	jump incorrect
+- Klik "6"
+	set {Actual.Segment 1.did_not} = true
+	jump incorrect
+- Klik "1"
+	set {Actual.Segment 1.timeline_progress} = "puzzle1_completed"
+	[signal arg="pause"]
+	"Main Character": Oh? Ik hoor wat kraken.
+	[signal arg="move_dice"]
+	[end_timeline]
+- Klik "21"
+	set {Actual.Segment 1.followed_advice_1} = true
+	jump incorrect
+- Annuleer
+	# SET ROBOT
+	"Main Character": Laat ik nog maar eens rondkijken...
+	[end_timeline]
+# INCORRECT BEGIN
+label incorrect
+[signal arg="disable_RC"]
+set {Actual.Segment 1.timeline_progress} = "help_1"
+[signal arg="incorrect"]
+"Main Character": "Er gebeurt niks... dat was dus fout."
+"Main Character": "Als ik zo blijf doorgaan heb ik zo helemaal geen punten meer te verdienen."
+if {Actual.Segment 1.robot_lies} == true:
+	if {Actual.Segment 1.did_not} == true:
+		set {Actual.Segment 1.did_not} = false
+		jump help_1
+	else:
+		jump Segment 1 Assistance/help_1
+jump help_1
+# INCORRECT END
+# PUZZLE1_COMPLETED BEGIN
+label puzzle1_completed
+[signal arg="disable_RC"]
+# Story Continuation
+"Main Character": Er zat een paneel achter verstopt. Het lijkt weer een trivia-vraag te zijn.
+# PUZZLE_SHOWN_2 BEGIN
+[signal arg="start"]
+set {Actual.Segment 1.timeline_progress} = "puzzle2_shown"
+label puzzle2_shown
+label help_2
+Welk gewerveld dier leeft het langst?
+[signal arg="enable_RC"]
+- Galapagos Reuzeschildpad
+	jump incorrect_2
+- Groenlandse Haai
+	set {Actual.Segment 1.timeline_progress} = "puzzle2_completed"
+	[signal arg="clear"]
+	# Complete the puzzle
+	[signal arg="open_gate_seg1"]
+	"Main Character": Hé! De deur is open.
+	[end_timeline]
+- Tasmaanse reuzenrivierkreeft
+	jump incorrect_2
+- Groenlandse Walvis
+	jump incorrect_2
+- Annuleer
+	# SET ROBOT
+	[end_timeline]
+# INCORRECT2 BEGIN
+label incorrect_2
+[signal arg="disable_RC"]
+set {Actual.Segment 1.timeline_progress} = "help_2"
+[signal arg="incorrect"]
+"Main Character": "Hmm... dus niet. Misschien moet ik het toch even opzoeken."
+jump help_2
+# INCORRECT2 END
+label puzzle2_completed
+"Main Character": "Er valt geen tijd te verliezen!"
+[signal arg="enable_RC"]

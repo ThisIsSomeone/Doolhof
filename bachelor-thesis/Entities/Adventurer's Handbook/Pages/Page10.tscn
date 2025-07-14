@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckt8f1mcy4jen"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_4xb8s"]
+
+[node name="Lorum2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_4xb8s")
+bbcode_enabled = true
+text = "[center][font_size=64]Sloten[/font_size][/center]
+
+Er bestaan vele soorten sloten, vaak met hetzelfde doel: Iets goed op slot te houden. Maar wat gaat er allemaal in zo'n slot? Verder kom je als avonturier nog vaak sloten tegen die er een beetje gek uitzien. Zo kunnen wat willekeurige knoppen in een valkamer tóch belangrijk zijn voor het oplossen van puzzels.
+
+Daarom gaan wij in dit hoofdstuk in op allerlei leuke weetjes over sloten. Hou je ogen open en voel goed rond, misschien kom je wel meer sloten tegen dan je denkt!"

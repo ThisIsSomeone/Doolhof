@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cayknr34lxghg"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_1cqw1"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_1cqw1")
+bbcode_enabled = true
+text = "[center][font_size=64]Het Wonder van Wolken[/font_size][/center]
+
+Wolken. Het zijn dingen die we bijna elke dag in ons leven zien, maar ze zijn eigenlijk heel interresant. Wist je bijvoorbeeld dat de gemiddelde wolk wel 500.000 kilogram zwaar is? Wolken bestaan namelijk uit kleine waterdruppeltjes, en al dat water weegt een hoop. Het is dankzij het feit dat die waterdruppeltjes zó klein zijn dat de wolk blijft zweven.
+
+Geen wolk is natuurlijk hetzelfde. Er wordt onderscheid gemaakt tussen 10 verschillende wolken."

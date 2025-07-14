@@ -1,0 +1,31 @@
+Game, Bachelor Thesis, Alette Farzad. Can be found over at [link to thesis project], 
+
+Asset Credits:
+
+Objects & Tilemaps:
+- kenney_tiny-town - Kenney
+- kenney-tiny-dungeon - Kenney  (https://kenney.nl/)
+- DampDungeons by Arex_V (https://arex-v.itch.io/damp-dungeons)
+- pixel-robot (https://opengameart.org/content/pixel-robot) David Harrington
+- Pocket Inventory Series (HumblePixel) (https://humblepixel.itch.io/)
+
+Fonts:
+- DungeonFont vrtxrry (https://vrtxrry.itch.io/dungeonfont)
+- Public Pixel_Font 1.24 - GGBotNet  (https://ggbot.itch.io/public-pixel-font)
+
+Art:
+- Slight help on titlescreen by darya and Im G (Gwen)
+- , as well as some puzzle assets.
+
+Assets not found here were manually made.
+
+Playtesters:
+	- Mark Rengers
+	- Flynn Munter
+	- Clover Mikuru
+	- Alice Kramers
+	- Jeroen
+	- Yaell
+
+Acknowledgements:
+	Thank supervisors, thank Macaroni

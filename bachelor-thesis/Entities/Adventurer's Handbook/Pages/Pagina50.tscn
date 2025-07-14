@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhxxx412hjc7l"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_4c4r0"]
+
+[node name="Lorum5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_4c4r0")
+bbcode_enabled = true
+text = "[center][font_size=64]Bronnen[/font_size][/center]
+
+Pagina 6 t/m 9 zijn overgenomen van het KNMI, de website van het kennis&data centrum van Nederland. Vindt meer informatie over wolken verder hier: https://www.knmi.nl/kennis-en-datacentrum/uitleg/wolken
+
+Over de logica-puzzel knechten & ridders vindt je hier: https://en.wikipedia.org/wiki/Knights_and_Knaves
+
+De feitjes over dieren van paginas 41-44: https://www.animalstoday.nl/34-verrassende-dierenfeiten/
+
+Informatie over de nomenclatuur van dieren: https://nl.wikipedia.org/wiki/Zo%C3%B6logische_nomenclatuur"

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://vmo08n4dn0mq"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_07q6a"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_07q6a")
+bbcode_enabled = true
+text = "
+De meest bekende variant van deze puzzel is gepopulariseerd door een film genaamt \"Labyrinth\". Hierin staat het hoofdpersonage voor twee deuren die beide een wachter hebben. Een deur leidt naar het kasteel in het midden van het labyrint, de andere naar een zekere dood.
+
+In deze film is de oplossing om aan één van de wachters het volgende te vragen: \"Zou de andere wachter mij vertellen dat jouw deur naar het kasteel leidt?\". Door deze vraag te stellen, zal de ridder altijd de waarheid vertellen over een leugen, of de knecht een leugen over de waarheid. De oplossing is dus altijd het omgekeerde van hun antwoord."

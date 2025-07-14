@@ -1,0 +1,13 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 2.talked_ogre} == true:
+	Ogre: "Kist kopen? Kist goed."
+	Ogre: "Mooiste kist. Niet gebruikt."
+	"Main Character": Ik denk dat ik niet veel nuttigs uit dit gesprek ga halen.
+else:
+	set {Actual.Segment 2.talked_ogre} = true
+	"Main Character": "Errr... goededag."
+	Ogre: "Hallo. Jij kist kopen?"
+	"Main Character": "Nee bedankt. Weet u toevallig hoe ik voorbij deze puzzel kom?"
+	Ogre: "Puzzel? Nee. Ik verkoop kist. Jij kist kopen?"
+	"Main Character": Ik denk dat ik niet veel nuttigs uit dit gesprek ga halen.
+[signal arg="enable_RC"]

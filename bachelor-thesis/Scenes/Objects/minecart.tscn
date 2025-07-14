@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://brs3m8nmbsumw"]
+
+[ext_resource type="Texture2D" uid="uid://bte2dp1pro2tr" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0055.png" id="1_l46xw"]
+[ext_resource type="Script" uid="uid://d2vh0l444sa14" path="res://Scenes/Objects/minecart.gd" id="1_vrcli"]
+[ext_resource type="PackedScene" uid="uid://y3xyb7611on0" path="res://Entities/DialogueTrigger/DialogueTrigger.tscn" id="2_uy1rq"]
+
+[node name="Minecart" type="Node2D"]
+script = ExtResource("1_vrcli")
+path = "uid://cbh30vd53ntec"
+
+[node name="Appearance" type="Sprite2D" parent="."]
+texture = ExtResource("1_l46xw")
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("2_uy1rq")]
+path = "uid://cbh30vd53ntec"

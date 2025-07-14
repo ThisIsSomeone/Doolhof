@@ -1,0 +1,9 @@
+[signal arg="disable_RC"]
+"Main Character": "Rosie, zou je me kunnen helpen?"
+"Robot Companion": "Jazeker! Het is interresant. Wolken [i]hebben[/i] gewicht. Ze bestaan uit kleine waterdruppels of ijskristallen, en die hebben massa."
+"Robot Companion": "De gemiddelde schapenwolk weegt ongeveer [b]500.000 kilogram[/b]. Zwaar, maar toch blijven ze zweven, omdat de waterdruppels zo klein zijn dat de luchtstromen ze omhoog houden."
+"Main Character": "Dankjewel! Nu snel de puzzel oplossen..."
+# Set the robot's timeline back to the default
+set {Companion} = 0
+[signal arg="set_RC"]
+[signal arg="enable_RC"]

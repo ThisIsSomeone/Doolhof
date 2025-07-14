@@ -1,0 +1,19 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 3.puzzle1_completed} == true:
+	"Main Character": Een oude dame die rustig boeken leest. Ik zal haar niet verder storen.
+	[signal arg="enable_RC"]
+	[end_timeline]
+if {Actual.Segment 2.talked_lady} == false:
+	"Main Character": Er staat een oude dame boeken te lezen.
+	Lady: "Hallo, avonturier. Hoe gaat je zoektocht?"
+	"Main Character": "Het gaat. Wat doet u hier?"
+	Lady: "Dat zie je toch! Ik zit hier boeken te lezen."
+	"Main Character": Dit is wel een merkwaardige plek om rustig boeken te gaan lezen...
+	"Main Character": "Ik zal u dan niet verder storen. Veel plezier."
+	set {Actual.Segment 2.talked_lady} = true
+if {Actual.Segment 3.puzzle1_viewed} == true:
+	"Main Character": Ik wou de dame om hulp vragen... maar ze zit diep in de boeken.
+	"Main Character": Ik zal haar niet verder storen.
+else:
+	"Main Character": Een oude dame die rustig boeken leest. Ik zal haar niet verder storen.
+[signal arg="enable_RC"]

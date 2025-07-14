@@ -1,0 +1,5 @@
+if {Actual.Segment 3.minecarts_unlocked} == false:
+	jump minecarts/
+if {Actual.Segment 2.timeline_progress} == "puzzle1_completed":
+	set {Actual.Segment 3.puzzle2_viewed} = true
+[signal arg="mc_1"]

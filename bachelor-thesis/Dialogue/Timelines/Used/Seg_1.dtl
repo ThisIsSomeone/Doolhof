@@ -1,0 +1,8 @@
+do Global.update_area()
+[signal arg="disable_RC"]
+"Main Character": Nog een dichte poort...
+"Main Character": Waar zullen ze nu de puzzel verstopt hebben?
+# Set right timeline
+set {Companion} = 4.0
+[signal arg="set_RC"]
+[signal arg="enable_RC"]

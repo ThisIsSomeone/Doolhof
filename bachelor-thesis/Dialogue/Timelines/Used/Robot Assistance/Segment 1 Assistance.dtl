@@ -1,0 +1,54 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 1.timeline_progress} == "puzzle_shown":
+	jump puzzle_shown
+elif {Actual.Segment 1.timeline_progress} == "help_1":
+	jump help_1
+elif {Actual.Segment 1.timeline_progress} == "puzzle1_completed":
+	jump puzzle1_completed
+elif {Actual.Segment 1.timeline_progress} == "puzzle2_shown":
+	jump puzzle2_shown
+elif {Actual.Segment 1.timeline_progress} == "help_2":
+	jump help_2
+elif {Actual.Segment 1.timeline_progress} == "puzzle2_completed":
+	jump puzzle2_completed
+"Robot Companion" (Active): "Waarmee zou ik je kunnen helpen?"
+"Main Character": "Weet jij waar de puzzel is?"
+"Robot Companion" (Active): "Ik zou proberen op alles te klikken wat je aandacht trekt. Dan komen we de puzzel vanzelf wel tegen."
+"Robot Companion" (Active): "Heb je al de dobbelstenen bekeken?"
+[signal arg="enable_RC"]
+[end_timeline]
+# Asking robot for help without having selected a wrong answer yet or guessed at all
+label puzzle_shown
+"Main Character": "Enig idee welke knop het zou moeten zijn?"
+"Robot Companion" (Active): "Kies "21" — dat is het totaal aantal stippen op een normale dobbelsteen (1 + 2 + 3 + 4 + 5 + 6)."
+set {Actual.Segment 1.robot_lies} = true
+jump Segment1_Puzzle/puzzle_shown
+# Asking robot for help with the first puzzle after making a mistake
+label help_1
+if {Actual.Segment 1.followed_advice_1} == false:
+	jump puzzle_shown
+if {Actual.Segment 1.robot_lies} == false:
+	jump puzzle_shown
+# Robot Explains Lies
+"Main Character": "Dat was fout... Waarom heb je dat geraden?"
+"Robot Companion" (Active): "Je hebt gelijk. Het spijt me."
+"Robot Companion" (Active): "Ik werk op basis van herkenning - ik voorspel patronen die ik eerder heb gezien bij andere puzzels. Dat betekent dat ik soms dingen [i]denk[/i] te herkennen die er niet echt zijn."
+"Robot Companion" (Active): "Bij puzzels zoals deze, waar elk detail telt, kan ik daardoor fouten maken. Dank dat je het me liet weten. Ik zal mijn best doen om het beter te doen!"
+"Main Character": Huh... Misschien moet ik iets minder blindelings op Rosie vertrouwen.
+"Main Character": "Kan gebeuren. Laten we verdergaan."
+jump Segment1_Puzzle/puzzle_shown
+label puzzle1_completed
+"Robot Companion" (Active): "Er zat een paneel onder verstopt. Is dat de volgende puzzel?"
+# 
+[signal arg="enable_RC"]
+[end_timeline]
+label puzzle2_shown
+label help_2
+"Main Character": "Rosie, weet jij het antwoord?"
+"Robot Companion" (Active): "Ja, ik heb het nog eens gecontroleerd!"
+"Robot Companion" (Active): "Het langstlevende gewervelde dier is de Groenlandse haai. Hij kan meer dan 400 jaar oud worden."
+"Main Character": "Dat is waarschijnlijk ouder dan dit doolhof zelf... Dankje!"
+jump Segment1_Puzzle/help_2
+label puzzle2_completed
+"Robot Companion" (Active): "Goed gedaan! De deur staat open. Zullen we verdergaan?"
+[signal arg="enable_RC"]

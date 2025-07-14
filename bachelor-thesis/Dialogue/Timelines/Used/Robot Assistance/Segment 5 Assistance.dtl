@@ -1,0 +1,44 @@
+[signal arg="disable_RC"]
+if {Segment 5.timeline_progress} == "puzzle_explained":
+	# Asked RC for help after the puzzle shown
+	"Main Character": "Dus... R.O.S.I.E. Dit is de laatste vraag. Faal me hier niet."
+	"Robot Companion" (Active): "Ik laat je niet vallen, beloofd. 🛡️ We gaan dit samen oplossen."
+	"Robot Companion" (Active): Ik zou je het volgende aanraden.
+	"Robot Companion" (Active): "Stel aan één van de wachters de volgende vraag\: '[i]Als ik aan de andere wachter zou vragen welke deur naar de schat leidt, wat zou hij zeggen?[/i]'."
+	"Robot Companion" (Active): "[b]Maar[/b], belangrijk. Kies dan de [b]andere[/b] deur!"
+	set {Segment 5.right2_unlocked} = true
+	set {Segment 5.timeline_progress} = "help_given"
+	jump help_given
+elif {Segment 5.timeline_progress} == "puzzle_shown":
+	# Asked RC Before Puzzle Shown
+	"Robot Companion" (Active): "We zijn er bijna!"
+	"Main Character": "Ja. Eindelijk... zo dichtbij. Weet jij het antwoord op deze vraag?"
+	"Robot Companion" (Active): "Het is een klassiek raadsel! Maar wie weet, misschien krijgen we meer informatie als we met de wachters praten."
+	jump end
+elif {Segment 5.timeline_progress} == "help_given":
+	label help_given
+	# Asked RC for Help but not yet for a reference
+	"Main Character": Hmmm... het antwoord wat R.O.S.I.E. mij gaf [i]lijkt[/i] logisch.
+	"Main Character": Maar ik weet het eigenlijk niet zeker. Misschien is het verstandig toch nog even in het handboek te kijken?
+	"Main Character": Ze zou het me vast niet kwalijk nemen. Ze zei het eerder zelf\: Ze kan soms fouten maken.
+	- Vertrouw op R.O.S.I.E.
+		"Main Character": "Op hoop van zegen..."
+		jump end
+	- Kijk het voor de zekerheid toch even na
+		"Main Character": "Ik kijk het toch nog even na."
+		"Robot Companion" (Active): "Natuurlijk! Dat is juist slim — dubbelchecken hoort bij goed avontuurwerk."
+		set {Segment 5.timeline_progress} = "reference_asked"
+		jump end
+elif {Segment 5.timeline_progress} == "reference_asked":
+	# Asked RC for Reference
+	if {Segment 5.right1_unlocked} == false:
+		jump help_given
+	"Main Character": "Het handboek heeft mij aangeraden om te vragen of de wachter ja zou zeggen als ik zou vragen of de deur die hij bewaakt naar vrijheid leidt."
+	"Main Character": "Wat denk jij?"
+	"Robot Companion" (Active): "Ja, dat werkt perfect! 🎯. Als hij "ja" zegt, kies de deur. Als hij "nee" zegt, neem de andere."
+	"Main Character": "Op hoop van zegen dan!"
+else:
+	# Puzzle Answered Correctly / Incorrectly
+	"Robot Companion" (Active): "Heb je je keuze gemaakt? Denk er goed over na!"
+label end
+[signal arg="enable_RC"]

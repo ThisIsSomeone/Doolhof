@@ -1,0 +1,11 @@
+[signal arg="disable_RC"]
+"Main Character": "Dus, Rosie..."
+"Robot Companion": "Wat is er?"
+"Main Character": "Jij bent gemaakt om avonturiers te helpen, toch?"
+"Robot Companion": "Dat is correct! Ik ben een artificial intelligence robot die getraint is op de data van allerlei avonturiers. Daarom ben ik goed in het oplossen van puzzels!"
+"Main Character": "..."
+"Robot Companion": "..."
+"Main Character": "Dus... zou je me kunnen helpen?"
+"Robot Companion": "Oh, excuus! Natuurlijk kan ik dat. Als je de puzzel aan het zoeken bent, ik denk dat ik [b]rechtsbovenin[/b] wat zag [i]glinsteren[/i] aan de muur!"
+"Main Character": "...Dankjewel."
+[signal arg="enable_RC"]

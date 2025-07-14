@@ -1,0 +1,3 @@
+[signal arg="clear"]
+set {Actual.Segment 3.puzzle2_completed} = true
+jump Segment 2 Assistance/

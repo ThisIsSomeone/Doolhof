@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cldnuq77km7yn"]
+
+[ext_resource type="PackedScene" uid="uid://3grimstepjfo" path="res://Entities/NPC/npc.tscn" id="1_fkvv6"]
+[ext_resource type="Script" uid="uid://lb3jn2a08cag" path="res://Entities/Puzzles/puzzle_trigger.gd" id="2_l2dtp"]
+
+[node name="NPC" instance=ExtResource("1_fkvv6")]
+script = ExtResource("2_l2dtp")
+min_score = 50
+timer_duration = 240
+penalty = 50
+path = "uid://by48ty6pbody4"
+
+[node name="Appearance" parent="." index="0"]
+texture = null
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 120.0
+one_shot = true

@@ -1,0 +1,4 @@
+"Main Character": "Een mijnkar. Ik kan hem bewegen.
+# #Set Minecarts Unlocked
+set {Actual.Segment 3.minecarts_unlocked} = true
+[signal arg="start"]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=4 uid="uid://dfj7rboun2m34"]
+
+[ext_resource type="PackedScene" uid="uid://c768k0wr1rfje" path="res://Scenes/Game Locations/Location.tscn" id="1_x5675"]
+[ext_resource type="Texture2D" uid="uid://64kj6gqva7ll" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0097.png" id="2_hsjme"]
+[ext_resource type="Script" uid="uid://d3itd2lht375h" path="res://Scenes/Game Locations/fifth_segment.gd" id="2_rxrpc"]
+[ext_resource type="Texture2D" uid="uid://b6f1eqhvr5gl" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0104.png" id="3_u2104"]
+[ext_resource type="Texture2D" uid="uid://c2erx8e6lkpmt" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0102.png" id="4_u2104"]
+[ext_resource type="Texture2D" uid="uid://cveja6a0apd8k" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0096.png" id="5_2p62u"]
+[ext_resource type="Texture2D" uid="uid://bt64hpoqnsgv8" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0131.png" id="5_cqs70"]
+[ext_resource type="PackedScene" uid="uid://y3xyb7611on0" path="res://Entities/DialogueTrigger/DialogueTrigger.tscn" id="7_efdow"]
+[ext_resource type="PackedScene" uid="uid://g1hkuvhh1s8w" path="res://Scenes/Area Transitioner/transitioner.tscn" id="9_fbiut"]
+[ext_resource type="Texture2D" uid="uid://bdd67hngy1imm" path="res://Assets/Used/kenney_tiny-town/Tiles/tile_0083.png" id="10_f1k6m"]
+[ext_resource type="PackedScene" uid="uid://cldnuq77km7yn" path="res://Entities/Puzzles/puzzle_trigger.tscn" id="11_ll103"]
+
+[node name="Location" instance=ExtResource("1_x5675")]
+script = ExtResource("2_rxrpc")
+
+[node name="TileMapLayer Bottom" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD//wAAAAAGAAMAAAD/////AAAAAAQAAAD///7/AAABAAQAAAD//wEAAAAGAAMAAAD///3/AAACAAQAAAD//wIAAAAGAAMAAAD//wMAAAAGAAMAAAD///v/AAACAAAAAAD//wQAAAACAAIAAAD+/wQAAAACAAIAAAAAAAQAAAACAAIAAAD8/wQAAAACAAIAAAD9/wQAAAACAAIAAAABAAQAAAACAAIAAAACAAQAAAACAAIAAAADAAQAAAACAAIAAAD7/wQAAAACAAIAAAAEAAQAAAACAAIAAAD6/wQAAAACAAIAAAAFAAQAAAACAAIAAAD5/wQAAAACAAIAAAAGAAQAAAACAAIAAAD4/wQAAAACAAIAAAAHAAQAAAACAAIAAAD3/wQAAAABAAIAAAAAAAMAAAAGAAMAAAAAAAIAAAAGAAMAAAAAAAEAAAAGAAMAAAAAAAAAAAAGAAMAAAAAAP//AAABAAQAAAAAAP7/AAABAAQAAAAAAP3/AAADAAQAAAAAAPv/AAACAAAAAAAIAPz/AAADAAEAAAAIAPv/AAADAAAAAAAIAAQAAAADAAIAAAAIAAMAAAADAAEAAAAIAAIAAAADAAEAAAAIAAEAAAADAAEAAAAIAAAAAAADAAEAAAAIAP//AAADAAEAAAAIAP7/AAADAAEAAAAIAP3/AAADAAEAAAAFAPv/AAACAAAAAAAHAPv/AAACAAAAAAAGAPv/AAAGAAAAAAAEAPv/AAACAAAAAAADAPv/AAACAAAAAAACAPv/AAACAAAAAAABAPv/AAACAAAAAAD+//v/AAACAAAAAAD9//v/AAACAAAAAAD8//v/AAACAAAAAAD7//v/AAACAAAAAAD6//v/AAACAAAAAAD5//v/AAAGAAAAAAD4//v/AAACAAAAAAD3//v/AAABAAAAAAD8//r/AAAAAAEAAAACAPr/AAAAAAEAAAAFAPr/AAAAAAEAAAAGAPr/AAAAAAEAAAAEAPr/AAAAAAAAAAADAPr/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPr/AAAAAAAAAAD///r/AAAAAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD7//r/AAAAAAAAAAD6//r/AAAAAAAAAAD5//r/AAAAAAAAAAD4//r/AAAAAAAAAAD3//r/AAAAAAEAAAAHAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAD3//z/AAABAAEAAAD3//3/AAABAAEAAAD3//7/AAABAAEAAAD3////AAABAAEAAAD3/wAAAAABAAEAAAD3/wEAAAABAAEAAAD3/wIAAAABAAEAAAD3/wMAAAABAAEAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAEAAAD2/wIAAAAAAAIAAAD2//3/AAAAAAEAAAD2//7/AAAAAAIAAAD2////AAAAAAIAAAD2//z/AAAAAAIAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAEAAAD2/wUAAAAAAAIAAAD2//r/AAAAAAAAAAD2//v/AAAAAAEAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAEAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAEAAAAJAP7/AAAAAAIAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAEAAAAJAAEAAAAAAAIAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAIAAAD+//7/AAABAAQAAAD+////AAABAAQAAAD+/wEAAAAGAAMAAAD8/wAAAAAGAAMAAAD9/wAAAAAGAAMAAAD8/wIAAAABAAQAAAD9/wIAAAABAAQAAAABAAIAAAAAAAQAAAACAAIAAAABAAQAAAABAAAAAAAGAAMAAAABAP7/AAAAAAQAAAACAP7/AAAAAAQAAAD6/wAAAAAGAAMAAAD6/wIAAAAAAAQAAAD7/wAAAAAGAAMAAAD7/wIAAAABAAQAAAD8//7/AAABAAQAAAD8////AAAAAAQAAAD8/wEAAAAAAAQAAAD9//3/AAACAAQAAAD9//7/AAAAAAQAAAD9////AAABAAQAAAD9/wEAAAAGAAMAAAD+//3/AAAIAAIAAAD+/wAAAAAGAAMAAAD+/wIAAAAAAAQAAAABAP//AAAAAAQAAAABAAEAAAAGAAMAAAACAP3/AAADAAQAAAACAP//AAABAAQAAAACAAAAAAAGAAMAAAACAAEAAAAGAAMAAAADAP3/AAACAAQAAAADAP7/AAABAAQAAAADAP//AAAAAAQAAAADAAAAAAAGAAMAAAADAAEAAAAAAAQAAAADAAIAAAAAAAQAAAAEAP7/AAAGAAMAAAAEAAAAAAAGAAMAAAAEAAIAAAABAAQAAAAFAP7/AAAGAAMAAAAFAAIAAAAAAAQAAAABAP3/AAAIAAIAAAD5/wAAAAAAAAQAAAD5/wIAAAAAAAQAAAD7//7/AAAGAAMAAAD7////AAAGAAMAAAD7/wEAAAAAAAQAAAD8//3/AAADAAQAAAD4/wEAAAADAAQAAGD4/wMAAAAEAAQAADD5/wEAAAABAAQAAAD5/wMAAAADAAQAADD6////AAAGAAMAAAD7/wMAAAADAAQAADD8/wMAAAACAAQAADD9/wMAAAADAAQAADD+/wMAAAACAAQAADACAAMAAAACAAQAADADAAMAAAADAAQAADAEAP//AAAGAAMAAAAEAAEAAAAAAAQAAAAEAAMAAAACAAQAADAFAP//AAAGAAMAAAAFAAMAAAADAAQAADABAAMAAAADAAQAADAFAAAAAAAGAAMAAAAFAAEAAAABAAQAAAAGAP//AAABAAQAAAAGAAEAAAABAAQAAAAGAAMAAAACAAQAADAHAP//AAACAAQAAFAHAAMAAAAEAAQAAFD5//7/AAAAAAQAAAD6//7/AAAGAAMAAAD5//3/AAACAAQAAAD6//3/AAAGAAMAAAD7//3/AAAGAAMAAAD4////AAADAAQAAGD5////AAABAAQAAAD6/wMAAAACAAQAADD4/wIAAAACAAQAAGD4/wAAAAACAAQAAGD4//3/AAAEAAQAAGD4//7/AAACAAQAAGAHAP3/AAAEAAQAAAAHAP7/AAADAAQAAFAHAAAAAAACAAQAAFAGAAAAAAABAAQAAAAGAAIAAAABAAQAAAAHAAEAAAACAAQAAFAHAAIAAAADAAQAAFAEAP3/AAAGAAMAAAAFAP3/AAAGAAMAAAAGAP3/AAADAAQAAAAGAP7/AAAAAAQAAAD6/wEAAAAAAAQAAAD4//z/AAAEAAMAAAD5//z/AAAGAAEAAAD6//z/AAAKAAAAAAD7//z/AAALAAAAAAD8//z/AAAEAAMAAAD9//z/AAAEAAMAAAD+//z/AAAIAAEAAAD///z/AAAFAAIAAAAAAPz/AAAFAAIAAAABAPz/AAAIAAEAAAACAPz/AAAEAAMAAAADAPz/AAAEAAMAAAAEAPz/AAAKAAAAAAAFAPz/AAALAAAAAAAGAPz/AAAGAAEAAAAHAPz/AAAEAAMAAAA=")
+
+[node name="Liar" type="Node2D" parent="." index="2"]
+position = Vector2(-25, -9)
+
+[node name="Guard" type="Sprite2D" parent="Liar" index="0"]
+position = Vector2(-56, -40)
+texture = ExtResource("2_hsjme")
+
+[node name="Weapon" type="Sprite2D" parent="Liar" index="1"]
+position = Vector2(-62, -37)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_u2104")
+
+[node name="Shield" type="Sprite2D" parent="Liar" index="2"]
+position = Vector2(-50, -35)
+scale = Vector2(0.75, 0.6875)
+texture = ExtResource("4_u2104")
+
+[node name="LiarTrigger" parent="Liar" index="3" instance=ExtResource("7_efdow")]
+position = Vector2(-56, -38)
+path = "uid://cveoko8invxop"
+
+[node name="Truther" type="Node2D" parent="." index="3"]
+position = Vector2(136, -9)
+
+[node name="Guard" type="Sprite2D" parent="Truther" index="0"]
+position = Vector2(-56, -40)
+texture = ExtResource("5_2p62u")
+
+[node name="Weapon" type="Sprite2D" parent="Truther" index="1"]
+position = Vector2(-62, -39)
+scale = Vector2(0.5, 1.125)
+texture = ExtResource("5_cqs70")
+
+[node name="TrutherTrigger" parent="Truther" index="2" instance=ExtResource("7_efdow")]
+position = Vector2(-56, -38)
+path = "uid://cveoko8invxop"
+
+[node name="NextAreas" type="Node2D" parent="." index="4"]
+visible = false
+
+[node name="Treasure" parent="NextAreas" index="0" instance=ExtResource("9_fbiut")]
+position = Vector2(-80, -49)
+rotation = 3.14159
+path = "uid://dby5gwuo33me5"
+
+[node name="Doom" parent="NextAreas" index="1" instance=ExtResource("9_fbiut")]
+position = Vector2(81, -50)
+rotation = 3.14159
+path = "uid://dby5gwuo33me5"
+
+[node name="Sign" type="Sprite2D" parent="." index="5"]
+position = Vector2(0, -4)
+texture = ExtResource("10_f1k6m")
+
+[node name="Puzzle Trigger" parent="Sign" index="0" instance=ExtResource("11_ll103")]
+min_score = 60
+timer_duration = 360
+penalty = 180
+path = "uid://djepigmu4rxxy"
+
+[connection signal="trigger_dialogue" from="Liar/LiarTrigger" to="." method="_on_liar_trigger_trigger_dialogue"]
+[connection signal="trigger_dialogue" from="Truther/TrutherTrigger" to="." method="_on_truther_trigger_trigger_dialogue"]

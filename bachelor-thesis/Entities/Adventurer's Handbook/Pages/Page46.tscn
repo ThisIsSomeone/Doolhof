@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bywa84weaccsr"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_elf1w"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_elf1w")
+bbcode_enabled = true
+text = "
+Zo is bijvoorbeeld de Coccinella septempunctata de naam voor het zevenstippige lieveheersbeest. Septempunctata betekent 'met zeven stippen'.
+
+Niet alle namen zijn echter heel logisch. Zo heet de Grijze Wolf de 'Canis lupus'. Canis betekent hier hond, en lupus betekent wolf. De grijze wolf heet dus letterlijk de wolfhond!
+
+Deze informatie komt van: https://nl.wikipedia.org/wiki/Zo%C3%B6logische_nomenclatuur"

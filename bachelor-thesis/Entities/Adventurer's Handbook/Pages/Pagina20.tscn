@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg8h13ct78iqo"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_iyn8a"]
+
+[node name="Lorum3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_iyn8a")
+bbcode_enabled = true
+text = "[center][font_size=64]Logica Puzzels[/font_size][/center]
+
+Logica puzzels zijn het soort problemen die je kan oplossen door deductief te redeneren. Door logisch nadenken kan je conclusies extrapoleren. Er zijn vele soorten logica puzzels, maar de meest bekende zijn toch waarschijnelijk sudokus of kruiswoorden.
+
+Logica puzzels kunnen ook de vorm van raadsels aannemen. Je zal vast een aantal hiervan tegenkomen in je avontuur. In dit hoofdstuk verkennen we de belangrijkste van dit soort puzzels."

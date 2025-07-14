@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1qpwqg6udawr"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_2yait"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_2yait")
+bbcode_enabled = true
+text = "
+8. Waterbeertjes zijn kleine gesegmenteerde diertjes die onder extreme omstandigheden kunnen overleven. Ze kunnen langdurige droogte, kou (bijna -270 graden C) of warmte (ruim + 250 graden C) overleven.
+
+9. Paarden gebruiken gelaatsuitdrukkingen om met elkaar te kunnen communiceren.
+
+10. Eekhoorntjes kunnen niet boeren of overgeven.
+
+11. De galapagosreuzen-
+schildpad kan wel tussen de 100 en 150 jaar oud worden en is daarmee een van de langst levende landdieren."

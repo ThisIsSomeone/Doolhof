@@ -1,0 +1,28 @@
+[signal arg="disable_RC"]
+"Main Character": What is the latin name for the grey wolf? [Puzzle 1 test]
+[text_input var="Prototyping.test_response"]
+if {Prototyping.test_response} == "canis lupus":
+	"Main Character": That's correct!
+else:
+	"Main Character": That's wrong!
+"Robot Companion": A choice presents itself
+[signal arg="enable_RC"]
+label choice_return_test
+- default option 1
+	Lets try this out
+- custom styles | [if {Prototyping.test_response} == "canis lupus"]
+	"Main Character": All right!
+- default option 2
+	"Robot Companion": Woo
+[signal arg="disable_RC"]
+"Main Character": Okay let's move on to the last puzzle type then
+[background arg="res://Assets/Placeholders/Miscellanious/Puzzle1_Tester_Image.jpg" fade="0.0"]
+"Robot Companion": Which dice should be it?
+- 1
+	set {Prototyping.test_response} = "1"
+- 2
+	set {Prototyping.test_response} = "2"
+- 3
+	set {Prototyping.test_response} = "3"
+"Main Character": Let's see. I chose {Prototyping.test_response}. What does that even mean?
+[signal arg="enable_RC"]

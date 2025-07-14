@@ -1,0 +1,9 @@
+do Global.update_area()
+[signal arg="disable_RC"]
+"Main Character": "Hé, Rosie. Ik snap eigenlijk niet waarom ze mij dit handboek hebben gegeven, zo met jou erbij."
+"Robot Companion" (Active): "Dat begrijp ik. Het is verleidelijk om alles aan mij te vragen, maar... ik ben niet foutloos."
+"Robot Companion" (Active): "Ik kan razendsnel denken, maar ik zie niet alles. Soms verzin ik iets dat logisch klinkt, maar toch onjuist is."
+"Robot Companion" (Active): "Dus... blijf mij vragen stellen, graag zelfs — maar laten we het boek ernaast houden. Dat geeft ons de beste kans."
+set {Companion} = 5.0
+[signal arg="set_RC"]
+[signal arg="enable_RC"]

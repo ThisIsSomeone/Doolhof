@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vd1axx7rtlc"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_5yduq"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_5yduq")
+bbcode_enabled = true
+text = "
+We maken onderscheid tussen de volgende wolken:
+
+Hoge wolken: Deze wolken 
+bestaan voornamelijk uit ijs en komen voor op 6 tot 12 kilometer hoogte.
+
+Hieronder vallen de cirrus, cirromuculus en cirrostratus wolken. Ze zien er soms uit als windveren of sluierwolken, zo dun dat ze het zonlicht nog doorlaten. 
+
+Deze wolken zijn vaak te zien als het nog mooi weer is. Ze hebben een draderige structuur, en kunnen zich ook rangschikken in kleinere of grotere plukken of smalle banden."

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://r014765wjywx"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_kp6gx"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_kp6gx")
+bbcode_enabled = true
+text = "
+Verticaal ontwikkelde wolken: Verticaal ontwikkelde wolken bevinden zich op 18 kilometer hoogte, afhankelijk van de temperatuur en de luchtdichtheid. Verticale wolken kunnen over meerdere horizontale (hoge, lage en middelhoge wolken) voorkomen. Er zijn twee soorten verticaal ontwikkelde wolken: cumulus en cumulonimbus.
+
+Pagina 6 t/m 9 zijn overgenomen van het KNMI, de website van het kennis&data centrum van Nederland. Vind meer informatie over wolken hier: 
+
+https://www.knmi.nl/kennis-en-datacentrum/uitleg/wolken
+"

@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjq138b8kspvo"]
+
+[ext_resource type="PackedScene" uid="uid://darmtxon8g3j1" path="res://Scenes/Game Locations/Third_Segment.tscn" id="1_xacy2"]
+[ext_resource type="Shader" uid="uid://c0nuso5xxxcc6" path="res://UI/Shaders/horizontal_wipe.gdshader" id="3_1hsb2"]
+[ext_resource type="PackedScene" uid="uid://dhbtftlhn5b57" path="res://Entities/Player/player.tscn" id="3_xacy2"]
+
+[sub_resource type="GDScript" id="GDScript_xacy2"]
+script/source = "extends Node2D
+
+var current:Node
+@export var start_scene:PackedScene
+
+@export_range(0.1, 2.0, 0.05, \"or_greater\", \"suffix:seconds\") var transition_duration:float = 1.0
+@export var transition_type:Tween.TransitionType
+@export var transition_ease_type:Tween.EaseType
+
+func _ready() -> void:
+	var start_instance:Node = start_scene.instantiate()
+	current = start_instance
+	add_child(start_instance)
+
+##Wipes the screen on a screen transition
+func wipe_to_scene(scene:PackedScene) -> void:
+	#Take the current texture of the viewport and apply it to the TextureRect node
+	var viewport_tex_copy := ImageTexture.create_from_image(get_viewport().get_texture().get_image())
+	var wiping:TextureRect = $WiperLayer/WipingTexture
+	wiping.texture = viewport_tex_copy
+	
+	#Create a Tween over the shader parameter called progress, indicating how far we are in a scene transition
+	var tween := create_tween()
+	tween.tween_method(
+		func(value:float):
+			(wiping.material as ShaderMaterial).set_shader_parameter(&\"progress\", value)
+			, 0.0, 1.0, transition_duration).set_ease(transition_ease_type).set_trans(transition_type)
+	
+	#Delete old scene
+	current.queue_free()
+	remove_child(current)
+	
+	#Instantiate new scene and make it current
+	var scene_instance := scene.instantiate()
+	current = scene_instance
+	add_child(scene_instance)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3p7r"]
+shader = ExtResource("3_1hsb2")
+shader_parameter/progress = 0.0
+
+[node name="World" type="Node2D" groups=["World"]]
+script = SubResource("GDScript_xacy2")
+start_scene = ExtResource("1_xacy2")
+
+[node name="WiperLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="WipingTexture" type="TextureRect" parent="WiperLayer"]
+material = SubResource("ShaderMaterial_o3p7r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Player" parent="." instance=ExtResource("3_xacy2")]

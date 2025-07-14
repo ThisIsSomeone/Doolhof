@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=4 uid="uid://0rw06igkybgv"]
+
+[ext_resource type="PackedScene" uid="uid://c768k0wr1rfje" path="res://Scenes/Game Locations/Location.tscn" id="1_hap2p"]
+[ext_resource type="PackedScene" uid="uid://g1hkuvhh1s8w" path="res://Scenes/Area Transitioner/transitioner.tscn" id="2_46qeh"]
+[ext_resource type="Script" uid="uid://4darekp4i0g8" path="res://Scenes/Game Locations/second_segment.gd" id="2_pm4c4"]
+[ext_resource type="Texture2D" uid="uid://cj7vvnu1f7typ" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0035.png" id="3_divbr"]
+[ext_resource type="Texture2D" uid="uid://c04xws1mjsy06" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0034.png" id="4_pm4c4"]
+[ext_resource type="Texture2D" uid="uid://bybp0aftji5yb" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0047.png" id="5_5oxqw"]
+[ext_resource type="Texture2D" uid="uid://84opij6vtuag" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0046.png" id="6_uj0l6"]
+[ext_resource type="PackedScene" uid="uid://cldnuq77km7yn" path="res://Entities/Puzzles/puzzle_trigger.tscn" id="8_5oxqw"]
+[ext_resource type="Texture2D" uid="uid://cn5ve88xm6q2" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0092.png" id="9_dnp3d"]
+[ext_resource type="Texture2D" uid="uid://ckbxdlshwmd3a" path="res://Assets/Used/kenney_tiny-dungeon/Tiles/tile_0089.png" id="10_3hdnq"]
+[ext_resource type="PackedScene" uid="uid://y3xyb7611on0" path="res://Entities/DialogueTrigger/DialogueTrigger.tscn" id="11_3hdnq"]
+[ext_resource type="Shader" uid="uid://c8bvkleusgjml" path="res://UI/Shaders/shine.gdshader" id="12_sdgqu"]
+[ext_resource type="Texture2D" uid="uid://gilf72fm3jq0" path="res://Assets/Used/kenney_tiny-town/Tiles/tile_0093.png" id="13_2f2em"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2l4j"]
+shader = ExtResource("12_sdgqu")
+shader_parameter/line_smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/brightness = 3.0
+shader_parameter/rotation_deg = 30.0
+shader_parameter/distortion = 1.8
+shader_parameter/speed = 0.4
+shader_parameter/position = 0.0
+shader_parameter/position_min = 0.25
+shader_parameter/position_max = 0.5
+shader_parameter/alpha = 1.0
+shader_parameter/line_color = Color(0.992157, 0.745098, 0.32549, 1)
+
+[node name="Location2" instance=ExtResource("1_hap2p")]
+script = ExtResource("2_pm4c4")
+
+[node name="TileMapLayer Bottom" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD//wAAAAAGAAMAAAD/////AAAGAAMAAAD///7/AAAGAAMAAAD//wEAAAAGAAMAAAD///3/AAAGAAMAAAD//wIAAAAGAAMAAAD//wMAAAADAAQAADD///v/AAACAAAAAAD//wQAAAACAAIAAAD+/wQAAAACAAIAAAAAAAQAAAACAAIAAAD8/wQAAAACAAIAAAD9/wQAAAACAAIAAAABAAQAAAACAAIAAAACAAQAAAACAAIAAAADAAQAAAACAAIAAAD7/wQAAAACAAIAAAAEAAQAAAACAAIAAAD6/wQAAAACAAIAAAAFAAQAAAACAAIAAAD5/wQAAAACAAIAAAAGAAQAAAACAAIAAAD4/wQAAAACAAIAAAAHAAQAAAACAAIAAAD3/wQAAAABAAIAAAAAAAMAAAACAAQAADAAAAIAAAAGAAMAAAAAAAEAAAABAAQAAAAAAAAAAAAAAAQAAAAAAP//AAABAAQAAAAAAP7/AAABAAQAAAAAAP3/AAAGAAMAAAAAAPv/AAACAAAAAAAIAPz/AAADAAEAAAAIAPv/AAADAAAAAAAIAAQAAAADAAIAAAAIAAMAAAADAAEAAAAIAAIAAAADAAEAAAAIAAEAAAADAAEAAAAIAAAAAAADAAEAAAAIAP//AAADAAEAAAAIAP7/AAADAAEAAAAIAP3/AAADAAEAAAAFAPv/AAACAAAAAAAHAPv/AAACAAAAAAAGAPv/AAACAAAAAAAEAPv/AAACAAAAAAADAPv/AAACAAAAAAACAPv/AAACAAAAAAABAPv/AAACAAAAAAD+//v/AAACAAAAAAD9//v/AAACAAAAAAD8//v/AAACAAAAAAD7//v/AAACAAAAAAD6//v/AAACAAAAAAD5//v/AAACAAAAAAD4//v/AAACAAAAAAD3//v/AAABAAAAAAD8//r/AAAAAAEAAAACAPr/AAAAAAEAAAAFAPr/AAAAAAEAAAAGAPr/AAAAAAEAAAAEAPr/AAAAAAAAAAADAPr/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPr/AAAAAAAAAAD///r/AAAAAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD7//r/AAAAAAAAAAD6//r/AAAAAAAAAAD5//r/AAAAAAAAAAD4//r/AAAAAAAAAAD3//r/AAAAAAEAAAAHAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAD3//z/AAABAAEAAAD3//3/AAABAAEAAAD3//7/AAABAAEAAAD3////AAABAAEAAAD3/wAAAAABAAEAAAD3/wEAAAABAAEAAAD3/wIAAAABAAEAAAD3/wMAAAABAAEAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAEAAAD2/wIAAAAAAAIAAAD2//3/AAAAAAEAAAD2//7/AAAAAAIAAAD2////AAAAAAIAAAD2//z/AAAAAAIAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAEAAAD2/wUAAAAAAAIAAAD2//r/AAAAAAAAAAD2//v/AAAAAAEAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAEAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAEAAAAJAP7/AAAAAAIAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAEAAAAJAAEAAAAAAAIAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAIAAAD+//7/AAABAAQAAAD+////AAAAAAQAAAD+/wEAAAABAAQAAAD8/wAAAAABAAQAAAD9/wAAAAAAAAQAAAD8/wIAAAAGAAMAAAD9/wIAAAAGAAMAAAABAAIAAAAGAAMAAAACAAIAAAAGAAMAAAABAAAAAAAAAAQAAAABAP7/AAAAAAQAAAACAP7/AAAAAAQAAAD6/wAAAAAAAAQAAAD6/wIAAAAAAAQAAAD7/wAAAAAGAAMAAAD7/wIAAAAGAAMAAAD8//7/AAABAAQAAAD8////AAAAAAQAAAD8/wEAAAAAAAQAAAD9//3/AAACAAQAAAD9//7/AAAAAAQAAAD9////AAAAAAQAAAD9/wEAAAABAAQAAAD+//3/AAADAAQAAAD+/wAAAAABAAQAAAD+/wIAAAAGAAMAAAABAP//AAAAAAQAAAABAAEAAAAGAAMAAAACAP3/AAADAAQAAAACAP//AAABAAQAAAACAAAAAAABAAQAAAACAAEAAAABAAQAAAADAP3/AAACAAQAAAADAP7/AAABAAQAAAADAP//AAAAAAQAAAADAAAAAAAAAAQAAAADAAEAAAAAAAQAAAADAAIAAAAAAAQAAAAEAP7/AAAAAAQAAAAEAAAAAAABAAQAAAAEAAIAAAABAAQAAAAFAP7/AAABAAQAAAAFAAIAAAAAAAQAAAABAP3/AAACAAQAAAD5/wAAAAAAAAQAAAD5/wIAAAAAAAQAAAD7//7/AAABAAQAAAD7////AAAGAAMAAAD7/wEAAAAGAAMAAAD8//3/AAADAAQAAAD4/wEAAAADAAQAAGD4/wMAAAAEAAQAADD5/wEAAAABAAQAAAD5/wMAAAADAAQAADD6////AAAGAAMAAAD7/wMAAAADAAQAADD8/wMAAAACAAQAADD9/wMAAAADAAQAADD+/wMAAAAGAAMAAAACAAMAAAACAAQAADADAAMAAAADAAQAADAEAP//AAABAAQAAAAEAAEAAAAAAAQAAAAEAAMAAAACAAQAADAFAP//AAAAAAQAAAAFAAMAAAADAAQAADABAAMAAAADAAQAADAFAAAAAAAAAAQAAAAFAAEAAAABAAQAAAAGAP//AAABAAQAAAAGAAEAAAABAAQAAAAGAAMAAAACAAQAADAHAP//AAACAAQAAFAHAAMAAAAEAAQAAFD5//7/AAAGAAMAAAD6//7/AAAAAAQAAAD5//3/AAAGAAMAAAD6//3/AAADAAQAAAD7//3/AAACAAQAAAD4////AAADAAQAAGD5////AAAGAAMAAAD6/wMAAAACAAQAADD4/wIAAAACAAQAAGD4/wAAAAACAAQAAGD4//3/AAAEAAQAAGD4//7/AAACAAQAAGAHAP3/AAAEAAQAAAAHAP7/AAADAAQAAFAHAAAAAAACAAQAAFAGAAAAAAABAAQAAAAGAAIAAAABAAQAAAAHAAEAAAACAAQAAFAHAAIAAAADAAQAAFAEAP3/AAADAAQAAAAFAP3/AAACAAQAAAAGAP3/AAADAAQAAAAGAP7/AAAAAAQAAAD6/wEAAAAAAAQAAAD4//z/AAAEAAMAAAD5//z/AAAJAAAAAAD6//z/AAAEAAMAAAD7//z/AAAEAAMAAAD8//z/AAAEAAIAAAD9//z/AAAEAAMAAAD+//z/AAAEAAMAAAD///z/AAAEAAMAAAAAAPz/AAAEAAMAAAABAPz/AAAEAAMAAAACAPz/AAAEAAMAAAADAPz/AAAEAAMAAAAEAPz/AAAEAAMAAAAFAPz/AAAEAAMAAAAGAPz/AAAEAAMAAAAHAPz/AAAEAAMAAAA=")
+
+[node name="TileMapLayer Top" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAEAPz/AgAHAAAAAAAEAP3/AgAHAAEAAAAEAP7/AgAHAAIAAAAEAP//AgAHAAMAAAAFAPz/AgAIAAAAAAAFAP3/AgAIAAEAAAAFAP7/AgAIAAIAAAAFAP//AgAIAAMAAAAGAPz/AgAJAAAAAAAGAP3/AgAJAAEAAAAGAP7/AgAJAAIAAAAGAP//AgAFAAQAAAAHAPz/AgAKAAAAAAAHAP3/AgAKAAEAAAAHAP7/AgAKAAIAAAAHAP//AgAKAAMAAAD4/wIAAgAHAAoAAAD4/wMAAgAHAAoAAAD4/wEAAAABAAYAAAD5/wIAAAAAAAQAAAD5/wMAAgAHAAoAAAACAPz/AQAJAAcAAAD5/wEAAAAEAAgAAAD9//3/AAAKAAYAAAD+//3/AAAKAAYAAAAGAAAAAgAJAAAAAAAGAAEAAgAJAAEAAAAHAAAAAgAKAAAAAAAHAAEAAgAKAAEAAAAEAAAAAgAEAAIAAAAEAAEAAgAEAAMAAAAFAAAAAgAFAAIAAAAFAAEAAgAFAAMAAAAGAAIAAgAJAAIAAAAHAAIAAgAKAAIAAAABAAAAAAAFAAcAAAACAAEAAAABAAkAAAAAAAEAAAAHAAcAAAACAAAAAAAFAAcAAAADAAEAAAAHAAcAAAABAP7/AgAEAAIAAAABAP//AgAEAAMAAAACAP7/AgAFAAIAAAACAP//AgAFAAMAAAADAP7/AgAGAAIAAAADAP//AgAGAAMAAAAAAAAAAAAFAAcAAAADAAAAAAAFAAcAAAA=")
+
+[node name="Transitioner" parent="." index="2" instance=ExtResource("2_46qeh")]
+position = Vector2(-104, -39)
+rotation = 3.14159
+path = "uid://darmtxon8g3j1"
+
+[node name="Open" type="Node2D" parent="." index="3"]
+visible = false
+
+[node name="OpenDoorRight" type="Sprite2D" parent="Open" index="0"]
+position = Vector2(8, -56)
+texture = ExtResource("3_divbr")
+
+[node name="OpenDoorLeft" type="Sprite2D" parent="Open" index="1"]
+position = Vector2(-8, -56)
+texture = ExtResource("4_pm4c4")
+
+[node name="Transitioner" parent="Open" index="2" instance=ExtResource("2_46qeh")]
+position = Vector2(0, -45)
+rotation = 3.14159
+path = "uid://dfj7rboun2m34"
+
+[node name="Closed" type="Node2D" parent="." index="4"]
+
+[node name="ClosedDoorRight" type="Sprite2D" parent="Closed" index="0"]
+position = Vector2(8, -56)
+texture = ExtResource("5_5oxqw")
+
+[node name="ClosedDoorLeft" type="Sprite2D" parent="Closed" index="1"]
+position = Vector2(-8, -56)
+texture = ExtResource("6_uj0l6")
+
+[node name="Puzzle Segment 2" parent="." index="5" instance=ExtResource("8_5oxqw")]
+position = Vector2(40, -56)
+scale = Vector2(0.5, 0.5)
+min_score = 60
+timer_duration = 480
+penalty = 60
+path = "uid://c5kgb71y2c4hy"
+
+[node name="Mimic" type="Node2D" parent="." index="6"]
+position = Vector2(87, -29)
+
+[node name="Open" type="Sprite2D" parent="Mimic" index="0"]
+visible = false
+texture = ExtResource("9_dnp3d")
+
+[node name="Closed" type="Sprite2D" parent="Mimic" index="1"]
+texture = ExtResource("10_3hdnq")
+
+[node name="Mimic" parent="Mimic" index="2" instance=ExtResource("11_3hdnq")]
+position = Vector2(0, 1)
+path = "uid://b0oaxlnurv5k1"
+
+[node name="Old Lady" parent="." index="7" instance=ExtResource("11_3hdnq")]
+position = Vector2(-104, 25)
+path = "uid://b2kwojxv7gqip"
+
+[node name="Barrels" parent="." index="8" instance=ExtResource("11_3hdnq")]
+position = Vector2(-32, -40)
+path = "uid://7ltdxj34bbel"
+
+[node name="Mushroom" parent="." index="9" instance=ExtResource("11_3hdnq")]
+position = Vector2(109, -3)
+path = "uid://df7qrk8kfqca6"
+
+[node name="Ogre" parent="." index="10" instance=ExtResource("11_3hdnq")]
+position = Vector2(40, 25)
+path = "uid://ba0qh5gws74ys"
+
+[node name="Puzzle" type="Sprite2D" parent="." index="11"]
+material = SubResource("ShaderMaterial_q2l4j")
+position = Vector2(40, -56)
+texture = ExtResource("13_2f2em")

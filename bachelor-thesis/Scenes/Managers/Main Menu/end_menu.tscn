@@ -1,0 +1,429 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqw2240pi2dpn"]
+
+[ext_resource type="Script" uid="uid://dpd18l0vpiisi" path="res://Scenes/Managers/Main Menu/end_menu.gd" id="1_k5pyv"]
+[ext_resource type="Texture2D" uid="uid://plg6421xb063" path="res://Assets/Used/SelfMade/lessblur.png" id="2_x2jil"]
+[ext_resource type="FontFile" uid="uid://dthjxfhunhsnr" path="res://Assets/Used/DungeonFont.ttf" id="3_701gd"]
+[ext_resource type="Texture2D" uid="uid://co20htgweu0yy" path="res://Assets/Used/pixel-robot/robot-preview.png" id="4_0umpm"]
+[ext_resource type="Texture2D" uid="uid://ctd08xn0rshba" path="res://Assets/Used/SelfMade/Question_Dice.png" id="5_otd2d"]
+[ext_resource type="Texture2D" uid="uid://ds6cxbkyql1yq" path="res://Assets/Used/SelfMade/Book.png" id="6_pust6"]
+[ext_resource type="FontFile" uid="uid://bofsh7urlfter" path="res://addons/dialogic/Example Assets/Fonts/marksman.otf" id="7_8fglu"]
+
+[node name="EndMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k5pyv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x2jil")
+expand_mode = 2
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -336.0
+offset_right = 352.0
+offset_bottom = 144.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_701gd")
+theme_override_font_sizes/normal_font_size = 128
+text = "Doolhof"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rosie" type="TextureRect" parent="Header"]
+layout_mode = 1
+offset_left = 32.0
+offset_top = -8.0
+offset_right = 352.0
+offset_bottom = 312.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_0umpm")
+
+[node name="Dice" type="TextureRect" parent="Header"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -64.0
+offset_right = -38.0
+offset_bottom = 58.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_otd2d")
+
+[node name="Book" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Book"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+
+[node name="TextureRect" type="TextureRect" parent="Book/MarginContainer"]
+custom_minimum_size = Vector2(711, 486)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_pust6")
+
+[node name="Main Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPage" type="Control" parent="Main Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -164.0
+offset_right = -16.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Screen/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Screen/LeftPage/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Screen/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_8fglu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][font_size=40]Instructies[/font_size][/center]
+
+Beste speler! Dankjewel voor het spelen van 'Doolhof'.
+
+- Sluit het spel niet af!
+- Ga naar de enquette en vul deze in
+- Lees het informatieblad voor verdere instructies!
+
+
+ Dankjewel alvast voor je bijdrage! Blijf na de enquette nog even zitten, dan krijg je nog een bedankje van mij."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPage" type="Control" parent="Main Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -164.0
+offset_right = 328.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Screen/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 143
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Screen/RightPage/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Start" type="Button" parent="Main Screen/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Naar Enquette"
+
+[node name="Open Filesysteem" type="Button" parent="Main Screen/RightPage/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Open Data Folder"
+
+[node name="Copy User Data" type="Button" parent="Main Screen/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Copy User Data"
+
+[node name="Show user data" type="Button" parent="Main Screen/RightPage/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Show User Data"
+
+[node name="Credits" type="Button" parent="Main Screen/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPage" type="Control" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -164.0
+offset_right = -16.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/LeftPage/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_8fglu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][font_size=40] Asset Credits[/font_size][/center]
+
+Objecten & Tilemaps: 
+[] door Kenney
+  x Tiny Town
+  x Tiny Dungeon
+[] door Arex_V op Itch
+  x DampDungeons
+[] door David Harrington
+  x pixel robot
+[] door HumblePixel op Itch
+  x Pocket Inventory
+    Series
+
+Lettertype
+[] DungeonFont by vrtxrry
+[] Public Pixel by GGBotNet
+
+Verder hebben Gwen & Darya3D geholpen met wat beeldbewerking."
+vertical_alignment = 1
+
+[node name="RightPage" type="Control" parent="Credits"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -164.0
+offset_right = 328.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/RightPage/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_8fglu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][font_size=40]Bèta-testers[/font_size][/center]
+
+Met veel dank aan:
+  Mark Rengers, Flynn 
+  Munter, Clover Mikuru,
+  Alice Kramers, Jeroen,
+  Yaell, Irene, Gwen,
+  Peltos, Dani, 
+  Michiel van der Bijl
+  
+
+[center][font_size=40]Sluitwoord[/font_size][/center]
+
+Verder wil ik graag nog Ben personelijk bedanken voor het helpen met het uitpluizen van Godot."
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Credits/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Terug naar Hoofdmenu"
+
+[node name="User Data" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPage" type="Control" parent="User Data"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -164.0
+offset_right = -16.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="User Data/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 344.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User Data/LeftPage/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="User Data/LeftPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_8fglu")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Test"
+vertical_alignment = 1
+selection_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="User Data/LeftPage/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.389287, 0.389287, 0.389287, 0.691)
+
+[node name="RightPage" type="Control" parent="User Data"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -164.0
+offset_right = 328.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="User Data/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -48.0
+offset_right = -168.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User Data/RightPage/MarginContainer"]
+layout_mode = 2
+
+[node name="Hide" type="Button" parent="User Data/RightPage/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Terug naar Hoofdmenu"
+
+[connection signal="pressed" from="Main Screen/RightPage/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main Screen/RightPage/MarginContainer/VBoxContainer/Open Filesysteem" to="." method="_on_open_filesysteem_pressed"]
+[connection signal="pressed" from="Main Screen/RightPage/MarginContainer/VBoxContainer/Copy User Data" to="." method="_on_copy_user_data_pressed"]
+[connection signal="pressed" from="Main Screen/RightPage/MarginContainer/VBoxContainer/Show user data" to="." method="_on_copy_user_data_2_pressed"]
+[connection signal="pressed" from="Main Screen/RightPage/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Credits/RightPage/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="User Data/RightPage/MarginContainer/VBoxContainer/Hide" to="." method="_on_hide_pressed"]

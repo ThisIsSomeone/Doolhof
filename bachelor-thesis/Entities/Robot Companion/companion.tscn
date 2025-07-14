@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkx3gujkg02rl"]
+
+[ext_resource type="Script" uid="uid://c64r4obypjlnb" path="res://Entities/Robot Companion/companion.gd" id="2_2rk6p"]
+[ext_resource type="Texture2D" uid="uid://co20htgweu0yy" path="res://Assets/Used/pixel-robot/robot-preview.png" id="2_pb7sv"]
+[ext_resource type="Texture2D" uid="uid://bxu18uly3gkyg" path="res://Assets/Used/SelfMade/robot_disabled.png" id="3_pb7sv"]
+
+[node name="Companion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_2rk6p")
+
+[node name="RC" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_pb7sv")
+texture_pressed = ExtResource("2_pb7sv")
+texture_disabled = ExtResource("3_pb7sv")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[connection signal="pressed" from="RC" to="." method="_on_texture_button_pressed"]

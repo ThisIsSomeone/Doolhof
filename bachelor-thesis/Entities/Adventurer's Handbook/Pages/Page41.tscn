@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpwk47ppajypr"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_sujlj"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_sujlj")
+bbcode_enabled = true
+text = "[center][font_size=64]Dierenweetjes[/font_size][/center]
+
+1. De onsterfelijke kwal Turritopsis Dohrnii is een soort dat nadat deze geslachtsrijp is geweest, weer terug kan gaan naar het eerste stadium van zijn ontwikkeling. Hierdoor is het dier in feite onsterfelijk, omdat het de levenscyclus steeds opnieuw kan beleven.
+
+2. Octopussen hebben 3 harten.
+
+3. Vlinders proeven met hun poten.
+
+4. Katten en paarden zijn zeer gevoelig voor het gif van de spin de zwarte weduwe. Honden zijn hier relatief resistent tegen, maar schapen en konijnen blijken zelfs immuun te zijn.
+
+"

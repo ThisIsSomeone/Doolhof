@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvrkpkjjj2j82"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_tefnh"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_tefnh")
+bbcode_enabled = true
+text = "
+Logaritmes zijn verder nog interresant om mee te rekenen. Zo geldt bijvoorbeeld dat:
+
+log_2(a) + log_2(b) = log_2(a * b). Dit klinkt gek, maar immers logisch als je het uitrekent.
+
+Stel a=4 en b=32, dan geldt 
+
+log_2(4) + log_2(32) = 2 + 5 = 7 = log_2(128)
+
+Maar waarom zijn logaritmes nou eigenlijk nuttig? Logaritmes komen eigenlijk vrij veel voor in de wetenschap. Zo is bijvoorbeeld de schaal voor zuurgraad (pH) een logaritmische schaal."

@@ -1,0 +1,15 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 2.timeline_progress} == "puzzle1_completed":
+	"Main Character": "Weet jij of deze mijnkarren met de gilde's puzzles te maken hebben?"
+	Dwarf: "Och, vast en zeker. Maar op welke manier, dat weet ik niet. Ik bemoei me er niet zo mee."
+	[signal arg="enable_RC"]
+	[end_timeline]
+if {Actual.Segment 3.dwarf_talked} == true:
+	Dwarf: "24 lange jaren... maar het is goed werk. Ik wordt lekker met rust gelaten zolang ik de mijnkarren draaiende hou."
+else:
+	set {Actual.Segment 3.dwarf_talked} = true
+	Dwarf: "Ik onderhoud deze mijnkarren hier voor de gilde."
+	Dwarf: "Het is lastig werk, maar ik doe het graag."
+	"Main Character": "Je hebt vast veel ervaring."
+	Dwarf: "Haha, dat klopt. Ik sta hier al 24 jaar."
+[signal arg="enable_RC"]

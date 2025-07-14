@@ -1,0 +1,16 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 3.mimic_popped} == true:
+	jump mimic_popped
+"Main Character": "Een verstopte kist... Ik ben benieuwd wat er in zit..."
+[signal arg="open_chest"]
+set {Actual.Segment 3.mimic_popped} = true
+"Main Character": "Ah!"
+label mimic_popped
+join Mimic center
+Mimic: "Hey! Jij daar! Waarom heb je me wakker gemaakt?"
+"Main Character": "Oh... sorry. Ik wist niet dat u daar zat. Ik dacht dat u een kist was."
+Mimic: "Nou zeg."
+"Main Character": "Uh... weet u toevallig iets over de puzzels hier?"
+Mimic: "Nee. Laat me met rust!"
+leave Mimic
+[signal arg="enable_RC"]

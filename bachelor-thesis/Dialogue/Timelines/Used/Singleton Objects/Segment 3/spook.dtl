@@ -1,0 +1,18 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 3.ghost_talked} == true:
+	"Main Character": "Hoe lang ben je hier al aan het spoken?"
+	Spook: "2 jaar... De gehoornde heeft mij zien vallen."
+	Spook: "Ik heb hem nog gevraagd waarom hij mij niet had geholpen. Maar hij haalde z'n schouders op en zei dat het niet binnen zijn baanbeschrijving viel."
+	"Main Character": Ik wil niet in die val eindigen... Laat ik maar m'n afstand houden.
+	[signal arg="enable_RC"]
+	[end_timeline]
+Spook: "Boe!"
+set {Actual.Segment 3.ghost_talked} = true
+"Main Character": "...Was dat bedoelt om mij te laten schrikken?"
+Spook: "Ugh. Sorry, ik ben zo slecht in spoken."
+"Main Character": "Waarom val je überhaupt avonturiers lastig? Kan je niet eens helpen met die puzzels?"
+Spook: "...Als ik de oplossing zou weten zou ik hier niet zijn doodgegaan."
+"Main Character": "Is de puzzel echt zo moeilijk dan?"
+Spook: "...Nee, maar tijdens het verkennen struikelde ik en viel ik op deze val."
+"Main Character": ...Ik zal maar een stapje terugnemen.
+[signal arg="enable_RC"]

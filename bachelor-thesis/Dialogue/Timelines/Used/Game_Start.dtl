@@ -1,0 +1,28 @@
+[signal arg="disable_RC"]
+set {Companion} = 0.0
+[signal arg="set_RC"]
+"Main Character": Dit zou de plek moeten zijn...
+"Main Character": In dit kasteel zit een doolhof gemaakt door de avonturiersgilde. Er ligt een schat in verstopt.
+"Main Character": Als ik deze schat te pakken krijg, zullen ze niet meer op me neerkijken. Hiermee word ik een echte avonturier.
+"Main Character": Maar... er is slechts één schat voor het grijpen, en er zijn veel mensen die op deze uitdaging afgekomen zijn. Ik moet me dus haasten.
+"Main Character": Gelukkig heb ik wat hulp meegekregen van de gilde...
+join Guidebook center
+"Main Character": Ik heb dit handboek met puzzelinformatie. Ik zou dat niet allemaal zelf kunnen onthouden.
+"Main Character": Het oogt als een hele hoop aan willekeurige informatie... maar het zal vast wel nuttig zijn als ze het aan iedere avonturier meegeven.
+leave Guidebook
+"Main Character": Verder heeft de gilde me ook deze robot meegegeven.
+join "Robot Companion" (Idle) center
+"Main Character": Deze robot gebruikt blijkbaar de allernieuwste [i]Kunstmatige Intelligentie[/i] technieken om te helpen puzzels op te lossen.
+"Main Character": Handig! Dat is vast sneller dan alles zelf te moeten opzoeken. Laten we de robot aanzetten...
+update "Robot Companion" (Active)
+"Main Character": ...Werkt het?
+"Robot Companion" (Active): [i]...Systeem geactiveerd...[/i]
+"Robot Companion" (Active): "Hallo! Ik ben R.O.S.I.E. De [b]R[/b]azendsnelle [b]O[/b]plossende [b]S[/b]uper [b]I[/b]ntelligentie [b]E[/b]enheid. Ik kijk er naar uit samen codes te kraken."
+"Main Character": "..Oh! Hoi Rosie. Dankjewel dat je me helpt."
+"Robot Companion" (Active): "Graag gedaan! Daar ben ik immers voor. Vraag me gerust om hulp door [i]op mijn icoon rechtsonder[/i] te klikken.
+"Robot Companion" (Active): Het kruisje op mijn gezicht [b]verdwijnt[/b] als ik iets te zeggen heb!
+"Main Character": "Goed om te weten."
+leave "Robot Companion"
+"Main Character": Tijd om te gaan. Het lijkt er echter op dat de poort dichtzit. Er zal vast een manier zijn om die te openen.
+"Main Character": Laten we de omgeving verkennen. Dat kan met de [b]muis[/b].
+[signal arg="enable_RC"]

@@ -1,0 +1,7 @@
+do Global.update_area()
+do Global.update_area()
+[signal arg="disable_RC"]
+"Main Character": "Pfoe... Hoeveel kamers zijn er nog te gaan?"
+"Robot Companion" (Active): "We zijn er bijna! Samen komen we er wel doorheen."
+"Main Character": Er staat een bord in het midden van deze kamer. Ik ben benieuwd wat er op staat.
+jump Segment5_Puzzle/

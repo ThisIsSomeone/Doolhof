@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://br3yukoa6u43e"]
+
+[ext_resource type="FontFile" uid="uid://bofsh7urlfter" path="res://addons/dialogic/Example Assets/Fonts/marksman.otf" id="1_w3ssk"]
+[ext_resource type="FontFile" uid="uid://g1gok00071kj" path="res://Assets/Used/Fonts/Lato,Lora,Righteous/Lato/Lato-Bold.ttf" id="2_w3ssk"]
+
+[resource]
+default_font = ExtResource("2_w3ssk")
+default_font_size = 36
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_w3ssk")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = 2

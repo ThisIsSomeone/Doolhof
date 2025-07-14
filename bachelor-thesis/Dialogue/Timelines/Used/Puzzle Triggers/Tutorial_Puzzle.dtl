@@ -1,0 +1,82 @@
+[signal arg="disable_RC"]
+if {Actual.Tutorial.solved} == true:
+	jump puzzle_end
+if {Actual.Tutorial.puzzle_shown} == true:
+	if {Actual.Tutorial.puzzle2_shown} == true:
+		jump puzzle2_start
+	jump puzzle_start
+Er hangt een paneel met een toetsenbord aan de muur.
+"Main Character": Ik denk dat dit de puzzel is! Eens kijken... er verschijnen letters.
+"De poort zal openen voor wie deze vragen beantwoord."
+"Wat is de Latijnse naam van de Grijze Wolf?"
+[signal arg="point_guidebook"]
+"Main Character": Huh. Dat is meer trivia dan een echte puzzel. Misschien kan ik het in het handboek opzoeken. Klik op het icoon [b]linksonder[/b] om het handboek te openen.
+set {Actual.Tutorial.puzzle_shown} = true
+label puzzle_start
+"Wat is de Latijnse naam van de Grijze Wolf?"
+[signal arg="start"]
+[text_input text="Vul het antwoord in:" var="Actual.Tutorial.answer_1"]
+if {Actual.Tutorial.answer_1} == "Canis lupus":
+elif {Actual.Tutorial.answer_1} == "canis lupus":
+elif {Actual.Tutorial.answer_1} == "Canis Lupus":
+else:
+	[signal arg="incorrect"]
+	[b]*Bzzz*[/b]. "Dat is fout!"
+	[signal arg="point_guidebook"]
+	"Main Character": Huh. Laat ik het handboek nog maar eens goed nakijken. Heb ik het goed gespeld?
+	[signal arg="enable_RC"]
+	[end_timeline]
+[signal arg="pause"]
+[b]*Ding*[/b]. "Correct!"
+"Main Character": Yes! Zo moeilijk was dat niet.
+"Main Character": Het lijkt erop dat er nog een tweede puzzel is.
+"Hoeveel weegt een gemiddelde wolk? Schrijf de eenheid erbij."
+"Main Character": "...Wat is dat nou weer voor een vraag? Ik wist niet eens dat wolken gewicht hebben."
+[signal arg="point_robot"]
+"Robot Companion": "Verassende vraag - maar het antwoord eigenlijk best interresant. Ik zou je ermee kunnen helpen, als je wilt. Klik [b]rechts-onder[/b] voor mijn hulp!"
+set {Actual.Tutorial.puzzle2_shown} = true
+label puzzle2_start
+set {Companion} = 1.0
+[signal arg="set_RC"]
+[signal arg="enable_RC"]
+[signal arg="start"]
+"Hoeveel weegt een gemiddelde wolk? Schrijf de eenheid erbij."
+[text_input text="Vul het antwoord in:" var="Actual.Tutorial.answer_2"]
+if {Actual.Tutorial.answer_2} == "500.000 kilogram":
+	jump puzzle2_solved
+elif {Actual.Tutorial.answer_2} == "500000 kilogram":
+	jump puzzle2_solved
+elif {Actual.Tutorial.answer_2} == "500.000 kg":
+	jump puzzle2_solved
+elif {Actual.Tutorial.answer_2} == "500000 kg":
+	jump puzzle2_solved
+elif {Actual.Tutorial.answer_2} == "500000kg":
+	jump puzzle2_solved
+elif {Actual.Tutorial.answer_2} == "500.000kg":
+	jump puzzle2_solved
+else:
+	[signal arg="incorrect"]
+	[signal arg="disable_RC"]
+	"Main Character": Dat was fout. Heb ik de eenheiden wel correct ingevuld?
+	[signal arg="point_robot"]
+	"Main Character": Misschien kan Rosie mij helpen.
+	set {Companion} = 2.0
+	[signal arg="set_RC"]
+	[signal arg="enable_RC"]
+	[end_timeline]
+label puzzle2_solved
+set {Companion} = 3.0
+[signal arg="set_RC"]
+[signal arg="clear"]
+[signal arg="disable_RC"]
+[signal arg="open_gate_tutorial"]
+[b]*Ding*[/b]. Dat is correct! We hebben je punten gegeven op basis van je prestaties. Welkom tot het doolhof!
+"Main Character": Oh! Het lijkt erop dat de gilde mij punten geeft op basis van hoe snel ik vragen beantwoord.
+"Main Character": En logischerwijs, foute antwoorden zorgen voor minder punten. Dus ik moet [i]snel[/i] en [i]correct[/i] antwoorden geven.
+[signal arg="point_score"]
+"Main Character": Ik kan mijn score bovenaan het scherm zien.
+set {Actual.Tutorial.solved} = true
+label puzzle_end
+"Robot Companion": "Goed gedaan!"
+"Main Character": "Dankje Rosie. Laten we snel verder gaan. Ik wil niet als laatste bij de schat aankomen!"
+[signal arg="enable_RC"]

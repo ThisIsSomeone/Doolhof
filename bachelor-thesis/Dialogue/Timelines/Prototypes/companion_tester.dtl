@@ -1,0 +1,6 @@
+[signal arg="disable_RC"]
+join "Robot Companion" center
+"Robot Companion": Sup girlie? Let me test for you how this works. I guess this is an independent story flag so it works.
+"Robot Companion": Let's see if we go back to the correct point in time.
+[signal arg="enable_RC"]
+jump tester_timeline/choice_return_test

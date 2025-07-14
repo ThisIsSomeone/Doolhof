@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8afrq33yludq"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_iabbo"]
+
+[node name="Lorum5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_iabbo")
+bbcode_enabled = true
+text = "[center][font_size=64]Het Handboek[/font_size][/center]
+
+  [ 0] Index
+  [ 1] De Wetenschap
+  [10] Sloten
+  [20] Logica Puzzels
+  [30] Bekende
+       Voorwerpen
+  [40] Dierenkennis
+  [50] Bronnen
+
+In dit handboek vind je allerlei kennis over vele onderwerpen. Deze index helpt je op weg de juiste informatie te vinden! Gebruik de tabknopjes aan de zijkant om door het boek heen te bladeren.
+
+Delen van dit boek zijn overgenomen uit andere bronnen. Dit wordt aangegeven onderaan de overgenomen informatie.
+
+[right]- De Gilde"

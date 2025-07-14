@@ -1,0 +1,25 @@
+[signal arg="disable_RC"]
+do Global.save_to_file()
+if {Conclusion.bad_ending} == true:
+	# #BAD ENDING ROUTE
+	"Main Character": ...Het loopt hier dood. Heb ik de verkeerde deur gekozen?
+	Wizard: "Welkom, avonturier."
+	"Main Character": "Was dat het doolhof?"
+	Wizard: "Inderdaad. Ik vermoed dat dit niet de uitkomst was waar je op gehoopt had."
+	"Main Character": "Niet echt, nee."
+	Wizard: "Maak je geen zorgen. De gilde erkent je inspanningen. Je hebt je best gedaan, en daar staat ook wat tegenover.
+	"Main Character": "...Dankjewel."
+	"Robot Companion" (Active): "Het spijt me, avonturier. We hebben samen ons best gedaan, en ook al ging het mis, dat maakt jou niet minder slim of dapper."
+	"Robot Companion" (Active): "Soms hoort verliezen erbij - zelfs in grote avonturen. Bovendien, er is altijd het volgende avontuur. Zin in taart? 🍰🤖
+	Wizard: "Taart is een goed idee. Maar voordat je gaat, zou je deze enquette willen invullen? Dan krijg je daarna van de gilde een bedankje."
+else:
+	# #GOOD ENDING ROUTE
+	Wizard: "Welkom, avonturier."
+	"Main Character": "Was dat het doolhof?"
+	Wizard: "Ja, je hebt de uitdaging verslagen. Gefeliciteerd!"
+	"Main Character": "Hoor je dat Rosie? Het is ons gelukt."
+	"Main Character": 🎉 Je hebt het gehaald! Slim gespeeld. Ik ben trots op je. Wat nu - op naar nieuwe avonturen... of eerst taart? 🍰🤖
+	"Main Character": "Nou... Er zou een schat voor mij hier liggen. Daar heb ik nu wel zin in."
+	Wizard: "Haha, ja, die krijg je, avonturier. Maar wees geduldig."
+	Wizard: "Zou je eerst even deze enquette willen invullen? Dan krijg je daarna van de gilde een leuk bedankje."
+[signal arg="end_game"]

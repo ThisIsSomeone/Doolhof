@@ -1,0 +1,195 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Bachelor Thesis"
+run/main_scene="uid://dhm8k7a2tctc6"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Global="*res://Globals/Global.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"Dwarf": "res://Dialogue/Characters/Dwarf.dch",
+"Guidebook": "res://Dialogue/Characters/Guidebook.dch",
+"Lady": "res://Dialogue/Characters/Lady.dch",
+"Liar": "res://Dialogue/Characters/Liar.dch",
+"Main Character": "res://Dialogue/Characters/Main Character.dch",
+"Mimic": "res://Dialogue/Characters/Mimic.dch",
+"Ogre": "res://Dialogue/Characters/Ogre.dch",
+"Robot Companion": "res://Dialogue/Characters/Robot Companion.dch",
+"Spook": "res://Dialogue/Characters/Spook.dch",
+"Truther": "res://Dialogue/Characters/Truther.dch",
+"Wachters": "res://Dialogue/Characters/Wachters.dch",
+"Wizard": "res://Dialogue/Characters/Wizard.dch"
+}
+directories/dtl_directory={
+"Barrels": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 2/Barrels.dtl",
+"Conclusion": "res://Dialogue/Timelines/Used/Conclusion.dtl",
+"False": "res://Dialogue/Timelines/Used/Robot Assistance/Tutorial/False.dtl",
+"Game_Start": "res://Dialogue/Timelines/Used/Game_Start.dtl",
+"Guards": "res://Dialogue/Timelines/Used/Puzzle Triggers/Guards.dtl",
+"IdleTutorial": "res://Dialogue/Timelines/Used/Robot Assistance/Tutorial/IdleTutorial.dtl",
+"Lady": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 2/Lady.dtl",
+"LetsGo": "res://Dialogue/Timelines/Used/Robot Assistance/Tutorial/LetsGo.dtl",
+"Mimic": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 2/Mimic.dtl",
+"Mushroom": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 2/Mushroom.dtl",
+"Ogre": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 2/Ogre.dtl",
+"Seg_1": "res://Dialogue/Timelines/Used/Seg_1.dtl",
+"Seg_2": "res://Dialogue/Timelines/Used/Seg_2.dtl",
+"Seg_5": "res://Dialogue/Timelines/Used/Seg_5.dtl",
+"Segment 1 Assistance": "res://Dialogue/Timelines/Used/Robot Assistance/Segment 1 Assistance.dtl",
+"Segment 2 Assistance": "res://Dialogue/Timelines/Used/Robot Assistance/Segment 2 Assistance.dtl",
+"Segment 5 Assistance": "res://Dialogue/Timelines/Used/Robot Assistance/Segment 5 Assistance.dtl",
+"Segment1_Puzzle": "res://Dialogue/Timelines/Used/Puzzle Triggers/Segment1_Puzzle.dtl",
+"Segment2_Puzzle": "res://Dialogue/Timelines/Used/Puzzle Triggers/Segment2_Puzzle.dtl",
+"Segment5_Puzzle": "res://Dialogue/Timelines/Used/Puzzle Triggers/Segment5_Puzzle.dtl",
+"Tutorial Assistance": "res://Dialogue/Timelines/Used/Robot Assistance/Tutorial Assistance.dtl",
+"Tutorial_Puzzle": "res://Dialogue/Timelines/Used/Puzzle Triggers/Tutorial_Puzzle.dtl",
+"Tutorial_Sign": "res://Dialogue/Timelines/Used/Singleton Objects/Tutorial_Sign.dtl",
+"companion_tester": "res://Dialogue/Timelines/Prototypes/companion_tester.dtl",
+"dice": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 1/dice.dtl",
+"dwarf": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 3/dwarf.dtl",
+"fountain": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 1/fountain.dtl",
+"garden": "res://Dialogue/Timelines/Used/Singleton Objects/Tutorial/garden.dtl",
+"mc_1": "res://Dialogue/Timelines/Used/Singleton Objects/Minecarts/mc_1.dtl",
+"mc_2": "res://Dialogue/Timelines/Used/Singleton Objects/Minecarts/mc_2.dtl",
+"mc_3": "res://Dialogue/Timelines/Used/Singleton Objects/Minecarts/mc_3.dtl",
+"mc_4": "res://Dialogue/Timelines/Used/Singleton Objects/Minecarts/mc_4.dtl",
+"minecarts": "res://Dialogue/Timelines/Used/Singleton Objects/minecarts.dtl",
+"onkruid": "res://Dialogue/Timelines/Used/Singleton Objects/Tutorial/onkruid.dtl",
+"pots": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 1/pots.dtl",
+"rubble": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 1/rubble.dtl",
+"solved": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 3/solved.dtl",
+"spook": "res://Dialogue/Timelines/Used/Singleton Objects/Segment 3/spook.dtl",
+"tester_timeline": "res://Dialogue/Timelines/Prototypes/tester_timeline.dtl",
+"trees": "res://Dialogue/Timelines/Used/Singleton Objects/Tutorial/trees.dtl",
+"waterput": "res://Dialogue/Timelines/Used/Singleton Objects/Tutorial/waterput.dtl"
+}
+glossary/default_case_sensitive=true
+variables={
+"Actual": {
+"Segment 1": {
+"did_not": false,
+"followed_advice_1": false,
+"robot_lies": false,
+"timeline_progress": ""
+},
+"Segment 2": {
+"extra_hulp": false,
+"handbook_37_seen": false,
+"robot_lies": false,
+"talked_lady": false,
+"talked_ogre": false,
+"timeline_progress": ""
+},
+"Segment 3": {
+"dwarf_talked": false,
+"ghost_talked": false,
+"mimic_popped": false,
+"minecarts_unlocked": false,
+"puzzle1_answer": "",
+"puzzle1_completed": false,
+"puzzle1_viewed": false,
+"puzzle2_completed": false,
+"puzzle2_progress": 0,
+"puzzle2_viewed": false
+},
+"Tutorial": {
+"answer_1": "",
+"answer_2": "",
+"puzzle2_shown": false,
+"puzzle_shown": false,
+"solved": false
+}
+},
+"Companion": 0,
+"Conclusion": {
+"bad_ending": false
+},
+"Prototyping": {
+"test_response": ""
+},
+"Segment 5": {
+"Guards": false,
+"right1_unlocked": false,
+"right2_unlocked": false,
+"timeline_progress": ""
+}
+}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+layout/style_list=[]
+layout/default_style="Default"
+translation/enabled=false
+translation/original_locale=""
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[global_group]
+
+World=""
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": []
+}
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

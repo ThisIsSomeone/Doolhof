@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c80i8onbhv8wl"]
+
+[ext_resource type="PackedScene" uid="uid://lud4lm15xyye" path="res://Entities/Adventurer's Handbook/Pages/LorumPage.tscn" id="1_geonk"]
+
+[node name="Lorum" instance=ExtResource("1_geonk")]
+
+[node name="RichTextLabel" parent="." index="0"]
+text = "HI I AM LORUM 2 THE TALKER OF THE FORESTS I AM A TEST PAGE AND I\"M VERY HAPPY TO BE HERE"

@@ -1,0 +1,95 @@
+[signal arg="disable_RC"]
+if {Segment 5.timeline_progress} == "puzzle_correct":
+	jump success
+elif {Segment 5.timeline_progress} == "puzzle_incorrect":
+	jump success
+if {Segment 5.timeline_progress} == "puzzle_shown":
+	join Liar left
+	join Truther right
+	Wachters: "Gegroet!"
+	Wachters: "Wij zijn de wachters van deze poorten!"
+	Liar: "Waar ben ik!"
+	Truther: "Nee, dat is Onwaar. Ik ben Waar."
+	Liar: "Dat is wat Onwaar zou zeggen!"
+	"Main Character": "Dat zijn... zeker passende namen."
+	Truther: "Dat dacht ik nou ook! Het was mijn idee ons zo te noemen. Veel leuker dan onze echte namen te gebruiken voor deze puzzel."
+	Liar: "Dat is een leugen. Het was mijn idee, maar het was maar een grapje. Ik vondt het iets té flauw."
+	Wachters: "Dus, avonturier. Wat zal het zijn?"
+	set {Segment 5.timeline_progress} = "puzzle_explained"
+	leave --All--
+	"Main Character": Wat zal ik ze vragen? Ik heb maar [b]één[/b] vraag, dus ik moet het goed raden. Laat ik maar R.O.S.I.E. of het handboek raadplegen. Of misschien kan ik de wachters toch porren voor wat meer informatie.
+	jump end_dialogue
+[signal arg="enable_RC"]
+if {Segment 5.Guards} == false:
+	# Liar
+	join Liar center
+	Liar: "Dus, wat zal het zijn, avonturier?"
+	- "Als ik de andere wachter een vraag zou vragen, zou hij de waarheid vertellen?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		Liar: "Neuh. Dat moet je niet van hem verwachten."
+	- "Ben ik een boomkikker?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		"Main Character": De wachters barsten in lachen uit.
+		Liar: "Absoluut! Een hele mooie, zelfs.
+	- "Bewaak je de deur naar de schat?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		Liar: "Neuh, de schat ligt achter de andere poort."
+	- "Als ik zou vragen of de deur die jij bewaakt naar vrijheid leidt, zou jij ja zeggen?" | [if {Segment 5.right1_unlocked} == true]
+		set {Segment 5.timeline_progress} = "puzzle_correct"
+		Liar: "Jep. Dat zou ik doen. Ik zei toch dat ik Waar was."
+	- "Welke deur zou naar de schat leiden volgens de andere wachter?" | [if {Segment 5.right2_unlocked} == true]
+		set {Segment 5.timeline_progress} = "puzzle_correct"
+		Liar: "Ha, die leugenaar zou dan naar zijn eigen deur wijzen."
+	- Annuleer
+		leave Liar
+		jump end_dialogue
+	leave Liar
+else:
+	# Truther
+	join Truther center
+	Truther: "Wat is jouw vraag, avonturier?"
+	- "Ben ik een boomkikker?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		"Main Character": De wachters barsten in lachen uit.
+		Truther: "Niet naar mijn weten."
+	- "Als ik de andere wachter een vraag zou vragen, zou hij de waarheid vertellen?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		Truther: "Nee. Dat zal hij niet."
+	- "Bewaak je de deur naar de schat?"
+		set {Segment 5.timeline_progress} = "puzzle_incorrect"
+		Truther: "Nee. Deze deur leidt niet tot de schat."
+	- "Als ik zou vragen of de deur die jij bewaakt naar vrijheid leidt, zou jij ja zeggen?" | [if {Segment 5.right1_unlocked} == true]
+		set {Segment 5.timeline_progress} = "puzzle_correct"
+		Truther: "Nee. Deze deur leidt niet tot de schat."
+	- "Welke deur zou naar de schat leiden volgens de andere wachter?" | [if {Segment 5.right2_unlocked} == true]
+		set {Segment 5.timeline_progress} = "puzzle_correct"
+		Truther: "Mijn deur. Heb je het antwoord uitgevogeld?"
+	- Annuleer
+		leave Liar
+		jump end_dialogue
+	leave Truther
+# Ending
+label ending
+join Liar left
+join Truther right
+Wachters: "Zo. Dat was de vraag."
+Wachters: "Success avonturier!"
+leave --All--
+[signal arg="move_guards"]
+if {Segment 5.timeline_progress} == "puzzle_incorrect":
+	# IF Blind Guess or Wrong, skip correctness
+	[signal arg="incorrect"]
+	[signal arg="clear"]
+	jump end_dialogue
+[signal arg="clear"]
+label correct
+[signal arg="set_correct"]
+# CORRECT End
+label end_dialogue
+# ENDING
+[signal arg="enable_RC"]
+[end_timeline]
+label success
+# ENDING TWO
+Wachters: "Success avonturier!"
+[signal arg="enable_RC"]

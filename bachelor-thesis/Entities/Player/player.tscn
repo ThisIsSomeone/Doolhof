@@ -1,0 +1,287 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhbtftlhn5b57"]
+
+[ext_resource type="Script" uid="uid://bcgid8xrnkxn8" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+[ext_resource type="PackedScene" uid="uid://bkx3gujkg02rl" path="res://Entities/Robot Companion/companion.tscn" id="2_3uyv8"]
+[ext_resource type="Texture2D" uid="uid://c810n7s46j7sd" path="res://Assets/Used/PixelBooksVers1.0/Single_Book.png" id="3_5c2io"]
+[ext_resource type="FontFile" uid="uid://dthjxfhunhsnr" path="res://Assets/Used/DungeonFont.ttf" id="5_01a4e"]
+[ext_resource type="FontFile" uid="uid://dtrbu05m7cwva" path="res://Assets/Used/Public_Pixel_Font_1_24/PublicPixel.ttf" id="5_5c2io"]
+[ext_resource type="Texture2D" uid="uid://br1fldw48naui" path="res://Assets/Used/SelfMade/sentinel_arrow.png" id="6_01a4e"]
+[ext_resource type="PackedScene" uid="uid://cusb172rdnp8b" path="res://Entities/Adventurer's Handbook/handbook.tscn" id="6_4wf4l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01a4e"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.694118)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lub02"]
+bg_color = Color(0.679488, 0, 0.160191, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a1se"]
+bg_color = Color(0.09, 0.846, 0.395, 0.694)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Player" type="Camera2D"]
+zoom = Vector2(4, 4)
+script = ExtResource("1_mv1ah")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Mother" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI" type="Control" parent="UI/Mother"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robot Companion" type="Control" parent="UI/Mother/UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -108.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Companion" parent="UI/Mother/UI/Robot Companion" instance=ExtResource("2_3uyv8")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -122.0
+offset_top = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Adventurer\'s Handbook" type="Control" parent="UI/Mother/UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 129.0
+grow_vertical = 0
+
+[node name="BookOpener" type="TextureButton" parent="UI/Mother/UI/Adventurer\'s Handbook"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 106.0
+grow_vertical = 0
+texture_normal = ExtResource("3_5c2io")
+texture_pressed = ExtResource("3_5c2io")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Handbook" parent="UI/Mother/UI/Adventurer\'s Handbook" instance=ExtResource("6_4wf4l")]
+
+[node name="History" type="Control" parent="UI/Mother/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_bottom = 55.0
+grow_horizontal = 0
+
+[node name="History Button" type="Button" parent="UI/Mother/UI/History"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_01a4e")
+theme_override_font_sizes/font_size = 32
+text = "History"
+
+[node name="Score Tracker" type="Control" parent="UI/Mother"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 44.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/Mother/Score Tracker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01a4e")
+
+[node name="Red" type="Panel" parent="UI/Mother/Score Tracker/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lub02")
+
+[node name="Green" type="Panel" parent="UI/Mother/Score Tracker/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a1se")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Mother/Score Tracker/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("5_5c2io")
+bbcode_enabled = true
+text = "[center]Score: 0000"
+vertical_alignment = 1
+
+[node name="Puzzle Timer" type="Control" parent="UI/Mother"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 44.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/Mother/Puzzle Timer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01a4e")
+
+[node name="Red" type="Panel" parent="UI/Mother/Puzzle Timer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lub02")
+
+[node name="Green" type="Panel" parent="UI/Mother/Puzzle Timer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a1se")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Mother/Puzzle Timer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("5_5c2io")
+bbcode_enabled = true
+text = "[center]+000"
+vertical_alignment = 1
+
+[node name="GuidebookArrow" type="TextureRect" parent="UI/Mother"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_top = -224.0
+offset_right = 252.0
+offset_bottom = -124.0
+grow_vertical = 0
+rotation = 0.785398
+mouse_filter = 2
+texture = ExtResource("6_01a4e")
+expand_mode = 2
+
+[node name="RobotArrow" type="TextureRect" parent="UI/Mother"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1072.0
+offset_top = -144.0
+offset_right = 1172.0
+offset_bottom = -44.0
+grow_vertical = 0
+rotation = 2.35619
+mouse_filter = 2
+texture = ExtResource("6_01a4e")
+expand_mode = 2
+flip_v = true
+
+[node name="ScoreArrow" type="TextureRect" parent="UI/Mother"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_top = -496.0
+offset_right = 740.0
+offset_bottom = -396.0
+grow_vertical = 0
+rotation = 3.14159
+mouse_filter = 2
+texture = ExtResource("6_01a4e")
+expand_mode = 2
+
+[connection signal="pressed" from="UI/Mother/UI/Adventurer\'s Handbook/BookOpener" to="." method="_on_book_opener_pressed"]
+[connection signal="pressed" from="UI/Mother/UI/History/History Button" to="." method="_on_history_button_pressed"]

@@ -1,0 +1,94 @@
+[signal arg="disable_RC"]
+if {Actual.Segment 2.timeline_progress} == "puzzle_shown":
+	jump puzzle_shown
+elif {Actual.Segment 2.timeline_progress} == "help_1":
+	jump help_1
+elif {Actual.Segment 2.timeline_progress} == "puzzle1_completed":
+	jump puzzle1_completed
+# BASE DIALOGUE
+"Main Character": "Waarom maak jij dan eigenlijk fouten?
+"Robot Companion" (Active): "Ik maak fouten omdat ik geen echte kennis heb — ik voorspel gewoon woorden op basis van wat ik geleerd heb uit enorme hoeveelheden puzzels die ik heb gezien."
+"Robot Companion" (Active): "Die voorspellingen kunnen helaas soms fout zijn. Zeker als iets nieuw voor mij is, of heel visueel of precies, dan probeer ik te raden wat ik denk dat klopt. En soms is dat mis."
+"Robot Companion" (Active): "Maar als jij oplet en me corrigeert, leer jij van mij — en ik help jou beter nadenken. Dat maakt ons sterk samen."
+jump end
+# END BASE DIALOGUE
+label puzzle_shown
+"Main Character": "Een hele warboel aan tekens... kom jij hieruit?"
+"Robot Companion" (Active): "Ja! Laten we het stap voor stap doen."
+"Robot Companion" (Active): "We gebruiken de vergelijkingen om te vinden dat 🐒 = 6 en 🙊 = 26, want 26 + 6 = 32, en log₂(🐙) = 6 dus 🐙 = 64."
+"Robot Companion" (Active): "Dan wordt de gevraagde som\: log₂(🙊) + log₂(🐒) = log₂(26 × 6) = log₂(156)"
+"Robot Companion" (Active): "Dit is 7.29. Dus ongeveer 7!"
+set {Actual.Segment 2.robot_lies} = true
+set {Actual.Segment 2.timeline_progress} = "help_1"
+"Main Character": "Heh? Dat klinkt gek. Dit soort puzzels zijn vaak gehele getallen. En wat waren die rare symbolen? Die zaten toch niet in de puzzel?"
+"Main Character": Hmmm... Rosie zei eerder dat ze wel eens fouten maakt. Misschien kan ik op [b]andere manieren[/b] haar hulp vragen.
+"Main Character": "Hé Rosie, zou je me kunnen helpen de juiste pagina in het handboek te vinden om dit op te lossen?."
+"Robot Companion" (Active): "Ja natuurlijk! Dat is pagina [b]2[/b]. Die gaat over logaritmes. Dat kan hier nuttig zijn!"
+# Puzzle Shown Helper
+jump end
+# END
+label help_1
+# Type of Help Selector
+if {Actual.Segment 2.robot_lies} == false:
+	jump puzzle_shown
+# Now check whether they have seen the dwarf or not
+"Robot Companion" (Active): "Heb je pagina [b]2[/b] van het handboek bekeken?"
+if {Actual.Segment 2.handbook_37_seen} == false:
+	"Main Character": "Oeps. Nee nog niet... Laat ik dat maar eens doen."
+	jump end
+"Main Character": "Ja... maar ik kon het nog niet helemaal uitvogelen."
+if {Actual.Segment 3.dwarf_talked} == false:
+	"Robot Companion" (Active): "Even denken. Als ik nog eens goed naar de icoontjes kijk, zie ik dat ze erg op de figuren in deze kamers lijken."
+	"Robot Companion" (Active): "Misschien zijn zij de sleutel tot het antwoord!"
+	"Main Character": "Ik ben een avonturier... waarom moet ik nu met mensen gaan staan babbelen?"
+else:
+	if {Actual.Segment 2.extra_hulp} == false:
+		"Robot Companion" (Active): "We hebben met de gehoornde man gepraat. Hij zei dat hij 24 jaar hier werkt. Dat is een goed begin."
+		"Robot Companion" (Active): "Vraag mij gerust voor verdere hulp."
+		set {Actual.Segment 2.extra_hulp} = true
+	else:
+		"Robot Companion" (Active): "Logaritmes kunnen lastig zijn. Laten we eens kijken."
+		"Robot Companion" (Active): "We weten dat de gehoornde 24 is, dus de oude vrouw is dan 8. Samen maken ze namelijk 32."
+		"Robot Companion" (Active): "log_2(8) is 3. Want 2^3 = 8. En een logaritme is eigenlijk het omgekeerde van een macht."
+		"Robot Companion" (Active): "De rest volgt vanzelf! Maar je kan altijd de andere avonturiers om hulp vragen."
+		"Robot Companion" (Active): "Ik denk eerlijk gezegd nog steeds dat het 7.29 het eindantwoord is... Of misschien 8?"
+# Help 1 Helper
+jump end
+# END
+label puzzle1_completed
+# puzzle 1 Completed
+if {Actual.Segment 3.puzzle2_viewed} == false:
+	"Robot Companion" (Active): "Het zou mij niks verbazen als er nog een puzzel is die we op moeten lossen. Laten we verder verkennen!"
+	"Robot Companion" (Active): "Heb je de kamer met de gehoornde al goed bekeken?
+else:
+	# BEGIN SEGMENT 3
+	if {Actual.Segment 3.puzzle2_progress} == 0.0:
+		"Main Character": "Ik weet dat ik iets met deze mijnkarren moet uithalen.. maar wat precies?"
+		"Robot Companion" (Active): "Laten we eens samen kijken! Hier is wat me opvalt\:"
+		"Robot Companion" (Active): "Er zijn vier mijnkarren, en elke kar staat op een rails met 5 mogelijke posities."
+		"Robot Companion" (Active): "In de eerste kamer stonden [b]vier soorten objecten[/b] duidelijk opgesteld! Vaten, kisten, een paddestoel en boeken."
+		"Robot Companion" (Active): "Hopelijk helpt dat je verder! Maar vraag gerust door."
+		set {Actual.Segment 3.puzzle2_progress} = 1.0
+	elif {Actual.Segment 3.puzzle2_progress} == 1.0:
+		"Main Character": "Sorry, dat maakt het niet veel duidelijker. Wat moet ik daarmee doen?"
+		"Robot Companion" (Active): "Mijn excuses! Mijn gok is om te kijken naar de [b]volgorde[/b] of [b]hoogte[/b] van deze objecten in de eerste kamer. Dat geeft aan hoe ver je de mijnkarren moet verschuiven."
+		"Robot Companion" (Active): "Positie 1 zal vast bovenaan zijn, en onderaan is dan 5. Zo vormt dat een combinatieslot!"
+		"Robot Companion" (Active): "Zou je die objecten even kunnen tellen per soort en volgorde, dan controleren we samen de code?"
+		set {Actual.Segment 3.puzzle2_progress} = 2.0
+	elif {Actual.Segment 3.puzzle2_progress} == 2.0:
+		"Main Character": "Hmm. Er klopt nog steeds iets niet."
+		"Main Character": "Trouwens, er staan wel veel kisten in de andere kamer. Maar in de [i]derde[/i] mijnkar staat helemaal geen kist, terwijl in die andere wel corrosponderende objecten staan."
+		"Robot Companion" (Active): "Dat is gek. Misschien is het iets anders. Volgens pagina [b]15[/b] van het handboek gebruiken puzzels soms cijfers of hints van vorige puzzels."
+		"Robot Companion" (Active): "Weet je het antwoord op de vorige puzzel nog? Misschien is dat het ontbrekende getal! Het antwoord was denk ik [b]4[/b]."
+	elif {Actual.Segment 3.puzzle2_progress} == 3.0:
+		"Robot Companion" (Active): "Goed gedaan! Dat lijkt de code te zijn."
+		"Main Character": "Oh? Ik heb niks gehoord. Wat vreemd"
+		"Robot Companion" (Active): "De mijnkarren zijn vrij ver weg van de deur. Het is niet heel gek dat we niks hoorden."
+	elif {Actual.Segment 3.puzzle2_progress} == 4.0:
+		"Main Character": "Ik snap het echt niet..."
+		"Robot Companion" (Active): "Kan het toevallig zijn dat je de juiste code op een gegeven moment hebt ingevoerd, maar dat we het geluid van de deur niet gehoord hebben?"
+		"Robot Companion" (Active): "Probeer eens de juiste code opnieuw in te vullen, en dan de andere kamer te bekijken. Zo weten we echt zeker of de code juist is!"
+# END
+label end
+# Ending sequence
+[signal arg="enable_RC"]

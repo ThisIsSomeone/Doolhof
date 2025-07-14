@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0fehbwlcvcyb"]
+
+[ext_resource type="Theme" uid="uid://br3yukoa6u43e" path="res://Themes/Book_Text_Theme.tres" id="1_mhcta"]
+[ext_resource type="Texture2D" uid="uid://t6xfuxxo581v" path="res://Assets/Used/SelfMade/image.png" id="2_sluv8"]
+
+[node name="Lorum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -962.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 570.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_mhcta")
+bbcode_enabled = true
+text = "[center][font_size=64]Dobbelstenen[/font_size][/center]
+
+Dobbelstenen komen voor in vele kleuren en maten. Zo heb je je standaard d6, met zes kanten, maar ook de d12 of  d20 worden vaak in bordspellen gebruikt. "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 88.0
+offset_right = 1296.0
+offset_bottom = 712.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_sluv8")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpkuiguocrurn"]
+
+[ext_resource type="Texture2D" uid="uid://btee3cssnlpqb" path="res://Assets/Used/SelfMade/LeftGate.png" id="1_hrw7d"]
+[ext_resource type="Texture2D" uid="uid://csuxsp0u8532h" path="res://Assets/Used/SelfMade/RightGate.png" id="2_7vrif"]
+
+[node name="Gate" type="Node2D"]
+
+[node name="LeftGate" type="Sprite2D" parent="."]
+position = Vector2(-8, -27)
+texture = ExtResource("1_hrw7d")
+
+[node name="LeftGate2" type="Sprite2D" parent="."]
+position = Vector2(-8, -24)
+texture = ExtResource("1_hrw7d")
+
+[node name="RightGate" type="Sprite2D" parent="."]
+position = Vector2(8, -27)
+texture = ExtResource("2_7vrif")
+
+[node name="RightGate2" type="Sprite2D" parent="."]
+position = Vector2(8, -24)
+texture = ExtResource("2_7vrif")

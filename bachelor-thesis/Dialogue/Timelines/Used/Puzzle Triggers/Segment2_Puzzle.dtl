@@ -1,0 +1,52 @@
+[signal arg="disable_RC"]
+# Skip to the right part
+if {Actual.Segment 3.puzzle1_completed} == true:
+	jump done
+if {Actual.Segment 2.timeline_progress} == "puzzle_shown":
+	jump puzzle_shown
+elif {Actual.Segment 2.timeline_progress} == "puzzle1_completed":
+	jump puzzle1_completed
+elif {Actual.Segment 2.timeline_progress} == "help_1":
+	jump help_1
+"Main Character": Gelukkig zat dit paneel niet verstopt. Eens zien...
+[signal arg="start"]
+set {Actual.Segment 2.timeline_progress} = "puzzle_shown"
+set {Actual.Segment 3.puzzle1_viewed} = true
+label puzzle_shown
+label help_1
+[signal arg="enable_RC"]
+[background arg="res://Assets/Used/SelfMade/Math Puzzle Revised.png" fade="0.0"]
+Wat is ?\:
+[text_input text="Vul het antwoord in:" var="Actual.Segment 3.puzzle1_answer"]
+if {Actual.Segment 3.puzzle1_answer} == "4":
+	jump puzzle1_completed
+else:
+	jump incorrect
+# PUZZLE END
+# INCORRECT BEGIN
+label incorrect
+[signal arg="disable_RC"]
+set {Actual.Segment 2.timeline_progress} = "help_1"
+[signal arg="incorrect"]
+"Main Character": Er gebeurt niets... Ik denk dat dat fout was.
+if {Actual.Segment 3.dwarf_talked} == false:
+	"Main Character": Het kan geen kwaad nog even in beide kamers rond te kijken. Misschien heb ik iets over het hoofd gezien.
+else:
+	"Main Character": Misschien moet ik eens in het handboek kijken...
+[signal arg="enable_RC"]
+[end_timeline]
+# INCORRECT END
+# PUZZLE1_COMPLETED BEGIN
+label puzzle1_completed
+[signal arg="disable_RC"]
+# Story Continuation
+[signal arg="clear"]
+set {Actual.Segment 2.timeline_progress} = "puzzle1_completed"
+set {Actual.Segment 3.puzzle1_completed} = true
+"Main Character": "Yes! Punten. Dat was dus correct."
+"Robot Companion" (Active): "Goed gedaan!"
+label done
+"Main Character": "... Er gebeurt niets. De deur staat nog steeds op slot. Is er nog een puzzel om op te lossen?"
+"Robot Companion" (Active): "Dat zou mij niks verbazen. Laten we verder verkennen!"
+do Global.update_area()
+[signal arg="enable_RC"]

@@ -1,0 +1,15 @@
+[signal arg="disable_RC"]
+Beste avonturier,
+Dit is de [b]laatste[/b] kamer!
+Er staan in deze kamer twee bewakers. Een vertelt altijd de waarheid, één liegt altijd.
+Er zijn twee paden. Een naar de schat, de ander naar een ongelukkige afloop.
+Je mag de wachters slechts [b]één[/b] vraag stellen.
+Gebruik alle hulpmiddelen die je hebt! Je zal ze nodig hebben. Vertrouw alleen [b]niet[/b] op andere avonturiers, het antwoord kan namelijk per doolhof verschillen.
+Success!
+\- De Gilde
+if {Segment 5.timeline_progress} == "":
+	[signal arg="start"]
+	set {Segment 5.timeline_progress} = "puzzle_shown"
+	set {Companion} = 10.0
+	[signal arg="set_RC"]
+[signal arg="enable_RC"]
